@@ -3,7 +3,7 @@
  * Author             : WCH
  * Version            : V1.0
  * Date               : 2020/08/06
- * Description        : ¥Æø⁄1 ’∑¢—› æ
+ * Description        : ÔøΩÔøΩÔøΩÔøΩ1ÔøΩ’∑ÔøΩÔøΩÔøΩ æ
  *********************************************************************************
  * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
  * Attention: This software (modified or not) and binary are used for 
@@ -26,12 +26,16 @@ uint32_t time_anti_bounce;
 bool flag_led;
 volatile bool interrupt_flag = false;
 
-#define DELAY_BLINK    1  // ß„ß÷ß‹
+#define DELAY_BLINK    1  // –°–µ–∫
+
+#define LED1           GPIO_Pin_18
+#define LED2           GPIO_Pin_19
+#define BUTTON         GPIO_Pin_4
 
 /*********************************************************************
  * @fn      main
  *
- * @brief   ÷˜∫Ø ˝
+ * @brief   ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
  *
  * @return  none
  */
@@ -39,45 +43,45 @@ int main()
 {
 
 
-    GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeIN_PU);
-    GPIOB_ITModeCfg(GPIO_Pin_4, GPIO_ITMode_LowLevel);   // ßØß—ß„ß‰ß‚ß—ß⁄ß”ß—ß÷ßﬁ PB4 ßØß— ß·ß‚ß÷ß‚ßÌß”ß—ßﬂß⁄ß÷ ß·ß‚ß⁄ ßﬂß⁄ßŸß‹ß‡ßﬁ ßÂß‚ß‡ß”ßﬂß÷
+    GPIOB_ModeCfg(BUTTON, GPIO_ModeIN_PU);
+    GPIOB_ITModeCfg(BUTTON, GPIO_ITMode_LowLevel);   // –£—Å—Ç–∞–Ω–æ–≤–∫–∞ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏—è –Ω–∞ –≤—Ö–æ–¥ PB4 –ø—Ä–∏ –Ω–∏–∑–∫–æ–º —É—Ä–æ–≤–Ω–µ
     PFIC_EnableIRQ(GPIO_B_IRQn);
 
-    GPIOB_SetBits(GPIO_Pin_18);                         // ßµß„ß‰ß—ßﬂß‡ß”ß‹ß— PB18 ßﬂß— ß”ßÌßÁß‡ß’
-    GPIOB_ModeCfg(GPIO_Pin_18, GPIO_ModeOut_PP_5mA);
+    GPIOB_SetBits(LED1);                         // –ò–Ω–∏—Ü–∏–∞–ª–∏–∑–∞—Ü–∏—è PB 18 –Ω–∞ –≤—ã—Ö–æ–¥
+    GPIOB_ModeCfg(LED1, GPIO_ModeOut_PP_5mA);
 
-    GPIOB_SetBits(GPIO_Pin_19);                         // ßµß„ß‰ß—ßﬂß‡ß”ß‹ß— PB19 ßﬂß— ß”ßÌßÁß‡ß’
-    GPIOB_ModeCfg(GPIO_Pin_19, GPIO_ModeOut_PP_5mA);
+    GPIOB_SetBits(LED2);                         // –ò–Ω–∏—Ü–∏–∞–ª–∏–∑–∞—Ü–∏—è PB 19 –Ω–∞ –≤—ã—Ö–æ–¥
+    GPIOB_ModeCfg(LED2, GPIO_ModeOut_PP_5mA);
 
-
+///
 
 
     while(1)
-    {     /* ß£ß—ß‚ß⁄ß—ßﬂß‰ ßﬁß⁄ß‘ß—ß›ß‹ß⁄ ßﬂß— ß‰ß—ß€ßﬁß÷ß‚ß÷ ß“ß÷ßŸ ßŸß—ß’ß÷ß‚ßÿß÷ß‹ */
+    {     /* –ú–∏–≥–∞–ª–∫–∞ –Ω–∞ —Ç–∞–π–º–µ—Ä–µ */
         if(((time / 1000)/60 >= DELAY_BLINK) && (flag_led == false)){
         time = 0;
         flag_led = true;
-        GPIOB_ResetBits(GPIO_Pin_18);
+        GPIOB_ResetBits(LED1);
         }
 
         if(((time / 1000)/60 >= DELAY_BLINK) && (flag_led)){
         time = 0;
         flag_led = false;
-        GPIOB_SetBits(GPIO_Pin_18);
+        GPIOB_SetBits(LED1);
         }
         time++;
 
 
-           /* ß±ß÷ß‚ß÷ß‹ß›ßßÈß÷ßﬂß⁄ß÷ ß„ß‡ß„ß‰ß‡ßÒßﬂß⁄ßÒ ß„ß”ß÷ß‰ß‡ß’ß⁄ß‡ß’ß—  ß·ß‡ ßÊß›ß—ß‘ßÂ ß·ß‚ß÷ß‚ßÌß”ß—ßﬂß⁄ßÒ*/
+           /* –ü–µ—Ä–µ–∫–ª—é—á–µ–Ω–∏–µ —Å–æ—Å—Ç–æ—è–Ω–∏—è —Å–≤–µ—Ç–æ–¥–∏–æ–¥–∞ –ø–æ —Å–æ—Å—Ç–æ—è–Ω–∏—é —Ñ–ª–∞–≥–∞ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏—è*/
         if (interrupt_flag){
-            GPIOB_InverseBits(GPIO_Pin_19);
-            DelayMs(50);                       //ß©ß—ßÎß⁄ß‰ß— ß‡ß‰ ß’ß‚ß÷ß“ß÷ßŸß‘ß—
+            GPIOB_InverseBits(LED2);
+            DelayMs(50);                       //–ó–∞—â–∏—Ç–∞ –æ—Ç –¥—Ä–µ–±–µ–∑–≥–∞
             interrupt_flag = false;
         } // (interrupt_flag)
 
 
-         /*ßÆß⁄ß‘ß—ß›ß‹ß— ßﬂß— ßŸß—ß’ß÷ß‚ßÿß‹ß÷*/
-//        GPIOB_InverseBits(GPIO_Pin_18);
+         /*–ú–∏–≥–∞–ª–∫–∞ –Ω–∞ –∑–∞–¥–µ—Ä–∂–∫–µ*/
+//        GPIOB_InverseBits(LED1);
 //        DelayMs(1000);
 
 
@@ -91,9 +95,9 @@ int main()
 __INTERRUPT
 __HIGH_CODE
 void GPIOB_IRQHandler(void) {
-    if(GPIOB_ReadITFlagBit(GPIO_Pin_4)){  // ß¶ß„ß›ß⁄ ß·ß‚ß÷ß‚ßÌß”ß—ßﬂß⁄ß÷ ß·ß‡ ß”ßÁß‡ß’ßÂ PB 4
+    if(GPIOB_ReadITFlagBit(BUTTON)){  // –ï—Å–ª–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–µ —Å—Ä–∞–±–æ—Ç–∞–ª–æ –ø–æ –≤—Ö–æ–¥—É PB4
         interrupt_flag = true;
-        GPIOB_ClearITFlagBit(GPIO_Pin_4);
+        GPIOB_ClearITFlagBit(BUTTON);
     }
 
 
