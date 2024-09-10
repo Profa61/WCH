@@ -1,0 +1,2110 @@
+
+Gpio_CH583.elf:     file format elf32-littleriscv
+Gpio_CH583.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000004 memsz 0x00000004 flags r-x
+    LOAD off    0x00002000 vaddr 0x20000000 paddr 0x00000004 align 2**12
+         filesz 0x000009c4 memsz 0x000009c4 flags r-x
+    LOAD off    0x000029c8 vaddr 0x000009c8 paddr 0x000009c8 align 2**12
+         filesz 0x000002f8 memsz 0x000002f8 flags r-x
+    LOAD off    0x000039c4 vaddr 0x200009c4 paddr 0x00000cc0 align 2**12
+         filesz 0x00000000 memsz 0x00000004 flags rw-
+    LOAD off    0x000039c8 vaddr 0x200009c8 paddr 0x00000cc0 align 2**12
+         filesz 0x00000000 memsz 0x0000000c flags rw-
+    LOAD off    0x00002e00 vaddr 0x20007e00 paddr 0x20007e00 align 2**12
+         filesz 0x00000000 memsz 0x00000200 flags rw-
+
+Sections:
+Idx Name            Size      VMA       LMA       File off  Algn  Flags
+  0 .init           00000004  00000000  00000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .highcodelalign 00000000  00000004  00000004  00002cc0  2**0  CONTENTS
+  2 .highcode       000009c4  20000000  00000004  00002000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .text           000002f8  000009c8  000009c8  000029c8  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .fini           00000000  00000cc0  00000cc0  00002cc0  2**0  CONTENTS, ALLOC, LOAD, CODE
+  5 .dalign         00000000  200009c4  200009c4  00002cc0  2**0  CONTENTS
+  6 .dlalign        00000000  00000cc0  00000cc0  00002cc0  2**0  CONTENTS
+  7 .data           00000004  200009c4  00000cc0  000039c4  2**0  ALLOC
+  8 .bss            0000000c  200009c8  00000cc0  000039c8  2**2  ALLOC
+  9 .stack          00000200  20007e00  20007e00  00002e00  2**0  ALLOC
+ 10 .debug_info     00003a06  00000000  00000000  00002cc0  2**0  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_abbrev   00000996  00000000  00000000  000066c6  2**0  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc      00000a47  00000000  00000000  0000705c  2**0  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_aranges  00000130  00000000  00000000  00007aa8  2**3  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_ranges   00000128  00000000  00000000  00007bd8  2**3  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_line     00002622  00000000  00000000  00007d00  2**0  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_str      00000f02  00000000  00000000  0000a322  2**0  CONTENTS, READONLY, DEBUGGING
+ 17 .comment        00000033  00000000  00000000  0000b224  2**0  CONTENTS, READONLY
+ 18 .debug_frame    000001d4  00000000  00000000  0000b258  2**2  CONTENTS, READONLY, DEBUGGING
+ 19 .stabstr        00000117  00000000  00000000  0000b42c  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    d  .init	00000000 .init
+00000004 l    d  .highcodelalign	00000000 .highcodelalign
+20000000 l    d  .highcode	00000000 .highcode
+000009c8 l    d  .text	00000000 .text
+00000cc0 l    d  .fini	00000000 .fini
+200009c4 l    d  .dalign	00000000 .dalign
+00000cc0 l    d  .dlalign	00000000 .dlalign
+200009c4 l    d  .data	00000000 .data
+200009c8 l    d  .bss	00000000 .bss
+20007e00 l    d  .stack	00000000 .stack
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .stabstr	00000000 .stabstr
+00000000 l    df *ABS*	00000000 ./Startup/startup_CH583.o
+20000000 l       .highcode	00000000 _vector_base
+00000000 l    df *ABS*	00000000 Main.c
+00000000 l    df *ABS*	00000000 CH58x_sys.c
+00000000 l    df *ABS*	00000000 ISP583.c
+200005b0 l       .highcode	00000000 .loop18
+200005be l       .highcode	00000000 .loop29
+200005cc l       .highcode	00000000 .loop40
+20000858 l       .highcode	00000000 .loop402
+00000000 l    df *ABS*	00000000 CH58x_gpio.c
+00000000 l    df *ABS*	00000000 close.c
+200005cc g     F .highcode	0000000e FLASH_ROM_OUT
+200011c8 g       .data	00000000 __global_pointer$
+20000568 g     F .highcode	0000000e mDelayuS
+200004aa  w    F .highcode	000000be HardFault_Handler
+20000092 g     F .highcode	00000020 GPIOB_IRQHandler
+20000090  w      .highcode	00000000 GPIOA_IRQHandler
+20000090  w      .highcode	00000000 SysTick_Handler
+20000090  w      .highcode	00000000 NMI_Handler
+20000090  w      .highcode	00000000 UART1_IRQHandler
+200009c8 g       .bss	00000000 _sbss
+00000200 g       *ABS*	00000000 __stack_size
+200005be g     F .highcode	0000000e FLASH_ROM_IN
+20000090  w      .highcode	00000000 UART0_IRQHandler
+00000004 g       .init	00000000 _einit
+20000090  w      .highcode	00000000 BB_IRQHandler
+2000065a g     F .highcode	0000036a FLASH_EEPROM_CMD
+20000090  w      .highcode	00000000 Break_Point_Handler
+00000b7a g     F .text	000000a6 GPIOB_ModeCfg
+20000090  w      .highcode	00000000 TMR0_IRQHandler
+2000059e g     F .highcode	00000012 FLASH_ROM_BEG
+00000c20 g     F .text	0000008a GPIOB_ITModeCfg
+20000576 g     F .highcode	00000028 mDelaymS
+20000090  w      .highcode	00000000 Ecall_M_Mode_Handler
+20007e00 g       .stack	00000000 _heap_end
+200005da g     F .highcode	00000048 FLASH_ROM_ADDR
+20000090  w      .highcode	00000000 RTC_IRQHandler
+200009d4 g       .bss	00000000 _ebss
+20000622 g     F .highcode	00000038 FLASH_ROM_WAIT
+20000090  w      .highcode	00000000 UART2_IRQHandler
+20000090  w      .highcode	00000000 PWMX_IRQHandler
+00000000 g       .init	00000000 _start
+20000090  w      .highcode	00000000 ADC_IRQHandler
+20000000 g       .highcode	00000000 _highcode_vma_start
+20000090  w      .highcode	00000000 TMR2_IRQHandler
+200009d0 g     O .bss	00000004 IRQ_STA
+200009c4 g       .data	00000000 _data_vma
+200000b2 g     F .highcode	00000386 SetSysClock
+20000090  w      .highcode	00000000 USB_IRQHandler
+20000090  w      .highcode	00000000 I2C_IRQHandler
+00000a7a g     F .text	00000100 main
+200009cc g     O .bss	00000004 time
+20000090  w      .highcode	00000000 USB2_IRQHandler
+00000004 g       .highcodelalign	00000000 _highcode_lma
+20000090  w      .highcode	00000000 LLE_IRQHandler
+00000000 g       .init	00000000 _sinit
+20000090  w      .highcode	00000000 WDOG_BAT_IRQHandler
+20000090  w      .highcode	00000000 Ecall_U_Mode_Handler
+20000090  w      .highcode	00000000 TMR3_IRQHandler
+20008000 g       .stack	00000000 _eusrstack
+20000090  w      .highcode	00000000 SW_Handler
+200009c8 g       .data	00000000 _edata
+20000090  w      .highcode	00000000 SPI0_IRQHandler
+200009d4 g       .bss	00000000 _end
+200009c4 g       .highcode	00000000 _highcode_vma_end
+00000cc0 g       .dlalign	00000000 _data_lma
+000009c8  w      .text	00000000 handle_reset
+20000090  w      .highcode	00000000 UART3_IRQHandler
+200009c9 g     O .bss	00000001 interrupt_flag
+200005b0 g     F .highcode	0000000e FLASH_ROM_END
+200009c8 g     O .bss	00000001 flag_led
+20000090  w      .highcode	00000000 TMR1_IRQHandler
+20000438 g     F .highcode	00000072 SYS_ResetExecute
+
+
+
+Disassembly of section .init:
+
+00000000 <_sinit>:
+_start():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:17
+
+	.section	.init,"ax",@progbits
+	.global	_start
+	.align	1
+_start:
+	j	handle_reset
+   0:	1c90006f          	j	9c8 <handle_reset>
+
+Disassembly of section .highcode:
+
+20000000 <_highcode_vma_start>:
+	...
+_vector_base():
+20000008:	0090                	addi	a2,sp,64
+2000000a:	2000                	fld	fs0,0(s0)
+2000000c:	04aa                	slli	s1,s1,0xa
+2000000e:	2000                	fld	fs0,0(s0)
+20000010:	bda9                	j	1ffffe6a <_data_lma+0x1ffff1aa>
+20000012:	f5f9                	bnez	a1,1fffffe0 <_data_lma+0x1ffff320>
+20000014:	0090                	addi	a2,sp,64
+20000016:	2000                	fld	fs0,0(s0)
+	...
+20000020:	0090                	addi	a2,sp,64
+20000022:	2000                	fld	fs0,0(s0)
+20000024:	0090                	addi	a2,sp,64
+20000026:	2000                	fld	fs0,0(s0)
+	...
+20000030:	0090                	addi	a2,sp,64
+20000032:	2000                	fld	fs0,0(s0)
+20000034:	0000                	unimp
+20000036:	0000                	unimp
+20000038:	0090                	addi	a2,sp,64
+2000003a:	2000                	fld	fs0,0(s0)
+2000003c:	0000                	unimp
+2000003e:	0000                	unimp
+20000040:	0090                	addi	a2,sp,64
+20000042:	2000                	fld	fs0,0(s0)
+20000044:	0090                	addi	a2,sp,64
+20000046:	2000                	fld	fs0,0(s0)
+20000048:	0092                	slli	ra,ra,0x4
+2000004a:	2000                	fld	fs0,0(s0)
+2000004c:	0090                	addi	a2,sp,64
+2000004e:	2000                	fld	fs0,0(s0)
+20000050:	0090                	addi	a2,sp,64
+20000052:	2000                	fld	fs0,0(s0)
+20000054:	0090                	addi	a2,sp,64
+20000056:	2000                	fld	fs0,0(s0)
+20000058:	0090                	addi	a2,sp,64
+2000005a:	2000                	fld	fs0,0(s0)
+2000005c:	0090                	addi	a2,sp,64
+2000005e:	2000                	fld	fs0,0(s0)
+20000060:	0090                	addi	a2,sp,64
+20000062:	2000                	fld	fs0,0(s0)
+20000064:	0090                	addi	a2,sp,64
+20000066:	2000                	fld	fs0,0(s0)
+20000068:	0090                	addi	a2,sp,64
+2000006a:	2000                	fld	fs0,0(s0)
+2000006c:	0090                	addi	a2,sp,64
+2000006e:	2000                	fld	fs0,0(s0)
+20000070:	0090                	addi	a2,sp,64
+20000072:	2000                	fld	fs0,0(s0)
+20000074:	0090                	addi	a2,sp,64
+20000076:	2000                	fld	fs0,0(s0)
+20000078:	0090                	addi	a2,sp,64
+2000007a:	2000                	fld	fs0,0(s0)
+2000007c:	0090                	addi	a2,sp,64
+2000007e:	2000                	fld	fs0,0(s0)
+20000080:	0090                	addi	a2,sp,64
+20000082:	2000                	fld	fs0,0(s0)
+20000084:	0090                	addi	a2,sp,64
+20000086:	2000                	fld	fs0,0(s0)
+20000088:	0090                	addi	a2,sp,64
+2000008a:	2000                	fld	fs0,0(s0)
+2000008c:	0090                	addi	a2,sp,64
+2000008e:	2000                	fld	fs0,0(s0)
+
+20000090 <ADC_IRQHandler>:
+GPIOA_IRQHandler():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:121
+TMR3_IRQHandler:
+UART2_IRQHandler:
+UART3_IRQHandler:
+WDOG_BAT_IRQHandler: 
+1:  
+	j 1b
+20000090:	a001                	j	20000090 <ADC_IRQHandler>
+
+20000092 <GPIOB_IRQHandler>:
+GPIOB_IRQHandler():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:94
+
+
+__INTERRUPT
+__HIGH_CODE
+void GPIOB_IRQHandler(void) {
+    if(GPIOB_ReadITFlagBit(GPIO_Pin_4)){  // Если прерывание по входу PB 4
+20000092:	40001737          	lui	a4,0x40001
+20000096:	09e75783          	lhu	a5,158(a4) # 4000109e <_eusrstack+0x1fff909e>
+2000009a:	8bc1                	andi	a5,a5,16
+2000009c:	cb89                	beqz	a5,200000ae <GPIOB_IRQHandler+0x1c>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:95
+        interrupt_flag = true;
+2000009e:	4785                	li	a5,1
+200000a0:	00001697          	auipc	a3,0x1
+200000a4:	92f684a3          	sb	a5,-1751(a3) # 200009c9 <interrupt_flag>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:96
+        GPIOB_ClearITFlagBit(GPIO_Pin_4);
+200000a8:	47c1                	li	a5,16
+200000aa:	08f71f23          	sh	a5,158(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:102
+    }
+
+
+
+
+}
+200000ae:	30200073          	mret
+
+200000b2 <SetSysClock>:
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+ * within the valid period. The safe mode will be automatically 
+ * terminated after the above validity period is exceeded.
+ */
+ __attribute__((always_inline)) static inline void sys_safe_access_enable(void)
+{
+   if(read_csr(0x800)&0x08)
+200000b2:	80002773          	csrr	a4,0x800
+200000b6:	8b21                	andi	a4,a4,8
+200000b8:	80818793          	addi	a5,gp,-2040 # 200009d0 <IRQ_STA>
+200000bc:	cb09                	beqz	a4,200000ce <SetSysClock+0x1c>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+   {
+       IRQ_STA = read_csr(0x800);
+200000be:	80002773          	csrr	a4,0x800
+200000c2:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200000c6:	4398                	lw	a4,0(a5)
+200000c8:	9b5d                	andi	a4,a4,-9
+200000ca:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   }
+   SAFEOPERATE;
+200000ce:	0001                	nop
+200000d0:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200000d2:	40001737          	lui	a4,0x40001
+200000d6:	05700693          	li	a3,87
+200000da:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200000de:	fa800693          	li	a3,-88
+200000e2:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200000e6:	0001                	nop
+200000e8:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:30
+__HIGH_CODE
+void SetSysClock(SYS_CLKTypeDef sc)
+{
+    uint32_t i;
+    sys_safe_access_enable();
+    R8_PLL_CONFIG &= ~(1 << 5); //
+200000ea:	04b74683          	lbu	a3,75(a4)
+200000ee:	0df6f693          	andi	a3,a3,223
+200000f2:	04d705a3          	sb	a3,75(a4)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+}
+
+__attribute__((always_inline)) static inline void sys_safe_access_disable(void)
+{
+   R8_SAFE_ACCESS_SIG = 0;
+200000f6:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200000fa:	80002673          	csrr	a2,0x800
+200000fe:	4394                	lw	a3,0(a5)
+20000100:	8aa1                	andi	a3,a3,8
+20000102:	8ed1                	or	a3,a3,a2
+20000104:	80069073          	csrw	0x800,a3
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000108:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+2000010c:	0001                	nop
+2000010e:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:32
+    sys_safe_access_disable();
+    if(sc & 0x20)
+20000110:	02057693          	andi	a3,a0,32
+20000114:	18068463          	beqz	a3,2000029c <SetSysClock+0x1ea>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:34
+    { // HSE div
+        if(!(R8_HFCK_PWR_CTRL & RB_CLK_XT32M_PON))
+20000118:	00a74703          	lbu	a4,10(a4)
+2000011c:	8b11                	andi	a4,a4,4
+2000011e:	e725                	bnez	a4,20000186 <SetSysClock+0xd4>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000120:	80002773          	csrr	a4,0x800
+20000124:	8b21                	andi	a4,a4,8
+20000126:	cb09                	beqz	a4,20000138 <SetSysClock+0x86>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000128:	80002773          	csrr	a4,0x800
+2000012c:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000130:	4398                	lw	a4,0(a5)
+20000132:	9b5d                	andi	a4,a4,-9
+20000134:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000138:	0001                	nop
+2000013a:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+2000013c:	40001737          	lui	a4,0x40001
+20000140:	05700693          	li	a3,87
+20000144:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000148:	fa800693          	li	a3,-88
+2000014c:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000150:	0001                	nop
+20000152:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:37
+        {
+            sys_safe_access_enable();
+            R8_HFCK_PWR_CTRL |= RB_CLK_XT32M_PON; // HSE power on
+20000154:	00a74683          	lbu	a3,10(a4)
+20000158:	0046e693          	ori	a3,a3,4
+2000015c:	00d70523          	sb	a3,10(a4)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+20000160:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000164:	800026f3          	csrr	a3,0x800
+20000168:	4398                	lw	a4,0(a5)
+2000016a:	8b21                	andi	a4,a4,8
+2000016c:	8f55                	or	a4,a4,a3
+2000016e:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000172:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000176:	0001                	nop
+20000178:	0001                	nop
+2000017a:	4b000713          	li	a4,1200
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:41 (discriminator 3)
+            sys_safe_access_disable();
+            for(i = 0; i < 1200; i++)
+            {
+                __nop();
+2000017e:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:42 (discriminator 3)
+                __nop();
+20000180:	0001                	nop
+20000182:	177d                	addi	a4,a4,-1
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:39 (discriminator 3)
+            for(i = 0; i < 1200; i++)
+20000184:	ff6d                	bnez	a4,2000017e <SetSysClock+0xcc>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000186:	80002773          	csrr	a4,0x800
+2000018a:	8b21                	andi	a4,a4,8
+2000018c:	cb09                	beqz	a4,2000019e <SetSysClock+0xec>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+2000018e:	80002773          	csrr	a4,0x800
+20000192:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000196:	4398                	lw	a4,0(a5)
+20000198:	9b5d                	andi	a4,a4,-9
+2000019a:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000019e:	0001                	nop
+200001a0:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200001a2:	40001737          	lui	a4,0x40001
+200001a6:	05700693          	li	a3,87
+200001aa:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200001ae:	fa800693          	li	a3,-88
+200001b2:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200001b6:	0001                	nop
+200001b8:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:47
+            }
+        }
+
+        sys_safe_access_enable();
+        R16_CLK_SYS_CFG = (0 << 6) | (sc & 0x1f);
+200001ba:	897d                	andi	a0,a0,31
+200001bc:	00a71423          	sh	a0,8(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:48
+        __nop();
+200001c0:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:49
+        __nop();
+200001c2:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:50
+        __nop();
+200001c4:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:51
+        __nop();
+200001c6:	0001                	nop
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+200001c8:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200001cc:	800026f3          	csrr	a3,0x800
+200001d0:	4398                	lw	a4,0(a5)
+200001d2:	8b21                	andi	a4,a4,8
+200001d4:	8f55                	or	a4,a4,a3
+200001d6:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+200001da:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+200001de:	0001                	nop
+200001e0:	0001                	nop
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200001e2:	80002773          	csrr	a4,0x800
+200001e6:	8b21                	andi	a4,a4,8
+200001e8:	cb09                	beqz	a4,200001fa <SetSysClock+0x148>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200001ea:	80002773          	csrr	a4,0x800
+200001ee:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200001f2:	4398                	lw	a4,0(a5)
+200001f4:	9b5d                	andi	a4,a4,-9
+200001f6:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200001fa:	0001                	nop
+200001fc:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200001fe:	40001737          	lui	a4,0x40001
+20000202:	05700693          	li	a3,87
+20000206:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000020a:	fa800693          	li	a3,-88
+2000020e:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000212:	0001                	nop
+20000214:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:54
+        sys_safe_access_disable();
+        sys_safe_access_enable();
+        SAFEOPERATE;
+20000216:	0001                	nop
+20000218:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:55
+        R8_FLASH_CFG = 0X51;
+2000021a:	400026b7          	lui	a3,0x40002
+2000021e:	05100613          	li	a2,81
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:88
+            sys_safe_access_disable();
+        }
+        else
+        {
+            sys_safe_access_enable();
+            R8_FLASH_CFG = 0X52;
+20000222:	80c683a3          	sb	a2,-2041(a3) # 40001807 <_eusrstack+0x1fff9807>
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+20000226:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000022a:	800026f3          	csrr	a3,0x800
+2000022e:	4398                	lw	a4,0(a5)
+20000230:	8b21                	andi	a4,a4,8
+20000232:	8f55                	or	a4,a4,a3
+20000234:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000238:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+2000023c:	0001                	nop
+2000023e:	0001                	nop
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000240:	80002773          	csrr	a4,0x800
+20000244:	8b21                	andi	a4,a4,8
+20000246:	cb09                	beqz	a4,20000258 <SetSysClock+0x1a6>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000248:	80002773          	csrr	a4,0x800
+2000024c:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000250:	4398                	lw	a4,0(a5)
+20000252:	9b5d                	andi	a4,a4,-9
+20000254:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000258:	0001                	nop
+2000025a:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+2000025c:	40001737          	lui	a4,0x40001
+20000260:	05700693          	li	a3,87
+20000264:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000268:	fa800693          	li	a3,-88
+2000026c:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000270:	0001                	nop
+20000272:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:100
+        R16_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+        sys_safe_access_disable();
+    }
+    //更改FLASH clk的驱动能力
+    sys_safe_access_enable();
+    R8_PLL_CONFIG |= 1 << 7;
+20000274:	04b74683          	lbu	a3,75(a4)
+20000278:	0806e693          	ori	a3,a3,128
+2000027c:	04d705a3          	sb	a3,75(a4)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+20000280:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000284:	80002773          	csrr	a4,0x800
+20000288:	439c                	lw	a5,0(a5)
+2000028a:	8ba1                	andi	a5,a5,8
+2000028c:	8fd9                	or	a5,a5,a4
+2000028e:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000292:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000296:	0001                	nop
+20000298:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:102
+    sys_safe_access_disable();
+}
+2000029a:	8082                	ret
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:59
+    else if(sc & 0x40)
+2000029c:	04057693          	andi	a3,a0,64
+200002a0:	14068b63          	beqz	a3,200003f6 <SetSysClock+0x344>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:61
+        if(!(R8_HFCK_PWR_CTRL & RB_CLK_PLL_PON))
+200002a4:	00a74703          	lbu	a4,10(a4)
+200002a8:	8b41                	andi	a4,a4,16
+200002aa:	e725                	bnez	a4,20000312 <SetSysClock+0x260>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200002ac:	80002773          	csrr	a4,0x800
+200002b0:	8b21                	andi	a4,a4,8
+200002b2:	cb09                	beqz	a4,200002c4 <SetSysClock+0x212>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200002b4:	80002773          	csrr	a4,0x800
+200002b8:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200002bc:	4398                	lw	a4,0(a5)
+200002be:	9b5d                	andi	a4,a4,-9
+200002c0:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200002c4:	0001                	nop
+200002c6:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200002c8:	40001737          	lui	a4,0x40001
+200002cc:	05700693          	li	a3,87
+200002d0:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200002d4:	fa800693          	li	a3,-88
+200002d8:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200002dc:	0001                	nop
+200002de:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:64
+            R8_HFCK_PWR_CTRL |= RB_CLK_PLL_PON; // PLL power on
+200002e0:	00a74683          	lbu	a3,10(a4)
+200002e4:	0106e693          	ori	a3,a3,16
+200002e8:	00d70523          	sb	a3,10(a4)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+200002ec:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200002f0:	800026f3          	csrr	a3,0x800
+200002f4:	4398                	lw	a4,0(a5)
+200002f6:	8b21                	andi	a4,a4,8
+200002f8:	8f55                	or	a4,a4,a3
+200002fa:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+200002fe:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000302:	0001                	nop
+20000304:	0001                	nop
+20000306:	7d000713          	li	a4,2000
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:68 (discriminator 3)
+                __nop();
+2000030a:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:69 (discriminator 3)
+                __nop();
+2000030c:	0001                	nop
+2000030e:	177d                	addi	a4,a4,-1
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:66 (discriminator 3)
+            for(i = 0; i < 2000; i++)
+20000310:	ff6d                	bnez	a4,2000030a <SetSysClock+0x258>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000312:	80002773          	csrr	a4,0x800
+20000316:	8b21                	andi	a4,a4,8
+20000318:	cb09                	beqz	a4,2000032a <SetSysClock+0x278>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+2000031a:	80002773          	csrr	a4,0x800
+2000031e:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000322:	4398                	lw	a4,0(a5)
+20000324:	9b5d                	andi	a4,a4,-9
+20000326:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000032a:	0001                	nop
+2000032c:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+2000032e:	40001737          	lui	a4,0x40001
+20000332:	05700693          	li	a3,87
+20000336:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000033a:	fa800693          	li	a3,-88
+2000033e:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000342:	0001                	nop
+20000344:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:73
+        R16_CLK_SYS_CFG = (1 << 6) | (sc & 0x1f);
+20000346:	01f57693          	andi	a3,a0,31
+2000034a:	0406e693          	ori	a3,a3,64
+2000034e:	00d71423          	sh	a3,8(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:74
+        __nop();
+20000352:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:75
+        __nop();
+20000354:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:76
+        __nop();
+20000356:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:77
+        __nop();
+20000358:	0001                	nop
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+2000035a:	04070023          	sb	zero,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000035e:	800026f3          	csrr	a3,0x800
+20000362:	4398                	lw	a4,0(a5)
+20000364:	8b21                	andi	a4,a4,8
+20000366:	8f55                	or	a4,a4,a3
+20000368:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000036c:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000370:	0001                	nop
+20000372:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:79
+        if(sc == CLK_SOURCE_PLL_80MHz)
+20000374:	04600713          	li	a4,70
+20000378:	04e51063          	bne	a0,a4,200003b8 <SetSysClock+0x306>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+2000037c:	80002773          	csrr	a4,0x800
+20000380:	8b21                	andi	a4,a4,8
+20000382:	cb09                	beqz	a4,20000394 <SetSysClock+0x2e2>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000384:	80002773          	csrr	a4,0x800
+20000388:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+2000038c:	4398                	lw	a4,0(a5)
+2000038e:	9b5d                	andi	a4,a4,-9
+20000390:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000394:	0001                	nop
+20000396:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000398:	40001737          	lui	a4,0x40001
+2000039c:	05700693          	li	a3,87
+200003a0:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200003a4:	fa800693          	li	a3,-88
+200003a8:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200003ac:	0001                	nop
+200003ae:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:82
+            R8_FLASH_CFG = 0X02;
+200003b0:	400026b7          	lui	a3,0x40002
+200003b4:	4609                	li	a2,2
+200003b6:	b5b5                	j	20000222 <SetSysClock+0x170>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200003b8:	80002773          	csrr	a4,0x800
+200003bc:	8b21                	andi	a4,a4,8
+200003be:	cb09                	beqz	a4,200003d0 <SetSysClock+0x31e>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200003c0:	80002773          	csrr	a4,0x800
+200003c4:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200003c8:	4398                	lw	a4,0(a5)
+200003ca:	9b5d                	andi	a4,a4,-9
+200003cc:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200003d0:	0001                	nop
+200003d2:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200003d4:	40001737          	lui	a4,0x40001
+200003d8:	05700693          	li	a3,87
+200003dc:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200003e0:	fa800693          	li	a3,-88
+200003e4:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200003e8:	0001                	nop
+200003ea:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:88
+            R8_FLASH_CFG = 0X52;
+200003ec:	400026b7          	lui	a3,0x40002
+200003f0:	05200613          	li	a2,82
+200003f4:	b53d                	j	20000222 <SetSysClock+0x170>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200003f6:	80002773          	csrr	a4,0x800
+200003fa:	8b21                	andi	a4,a4,8
+200003fc:	cb09                	beqz	a4,2000040e <SetSysClock+0x35c>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200003fe:	80002773          	csrr	a4,0x800
+20000402:	80e1a423          	sw	a4,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000406:	4398                	lw	a4,0(a5)
+20000408:	9b5d                	andi	a4,a4,-9
+2000040a:	80071073          	csrw	0x800,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000040e:	0001                	nop
+20000410:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000412:	40001737          	lui	a4,0x40001
+20000416:	05700693          	li	a3,87
+2000041a:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000041e:	fa800693          	li	a3,-88
+20000422:	04d70023          	sb	a3,64(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000426:	0001                	nop
+20000428:	0001                	nop
+SetSysClock():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:95
+        R16_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+2000042a:	00875683          	lhu	a3,8(a4)
+2000042e:	0c06e693          	ori	a3,a3,192
+20000432:	00d71423          	sh	a3,8(a4)
+20000436:	bbc5                	j	20000226 <SetSysClock+0x174>
+
+20000438 <SYS_ResetExecute>:
+SYS_ResetExecute():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:164
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void SYS_ResetExecute(void)
+{
+20000438:	1141                	addi	sp,sp,-16
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:165
+    FLASH_ROM_SW_RESET();
+2000043a:	4681                	li	a3,0
+2000043c:	4601                	li	a2,0
+2000043e:	4581                	li	a1,0
+20000440:	4511                	li	a0,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:164
+{
+20000442:	c606                	sw	ra,12(sp)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:165
+    FLASH_ROM_SW_RESET();
+20000444:	2c19                	jal	2000065a <FLASH_EEPROM_CMD>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000446:	800027f3          	csrr	a5,0x800
+2000044a:	8ba1                	andi	a5,a5,8
+2000044c:	80818693          	addi	a3,gp,-2040 # 200009d0 <IRQ_STA>
+20000450:	cb89                	beqz	a5,20000462 <SYS_ResetExecute+0x2a>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000452:	800027f3          	csrr	a5,0x800
+20000456:	80f1a423          	sw	a5,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+2000045a:	429c                	lw	a5,0(a3)
+2000045c:	9bdd                	andi	a5,a5,-9
+2000045e:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000462:	0001                	nop
+20000464:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000466:	400017b7          	lui	a5,0x40001
+2000046a:	05700713          	li	a4,87
+2000046e:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000472:	fa800713          	li	a4,-88
+20000476:	04e78023          	sb	a4,64(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+2000047a:	0001                	nop
+2000047c:	0001                	nop
+SYS_ResetExecute():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:167
+    sys_safe_access_enable();
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+2000047e:	0467c703          	lbu	a4,70(a5)
+20000482:	00176713          	ori	a4,a4,1
+20000486:	04e78323          	sb	a4,70(a5)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+2000048a:	04078023          	sb	zero,64(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000048e:	80002773          	csrr	a4,0x800
+20000492:	429c                	lw	a5,0(a3)
+20000494:	8ba1                	andi	a5,a5,8
+20000496:	8fd9                	or	a5,a5,a4
+20000498:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000049c:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+200004a0:	0001                	nop
+200004a2:	0001                	nop
+SYS_ResetExecute():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:169
+    sys_safe_access_disable();
+}
+200004a4:	40b2                	lw	ra,12(sp)
+200004a6:	0141                	addi	sp,sp,16
+200004a8:	8082                	ret
+
+200004aa <HardFault_Handler>:
+HardFault_Handler():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:303
+__INTERRUPT
+__HIGH_CODE
+__attribute__((weak))
+void HardFault_Handler(void)
+{
+    FLASH_ROM_SW_RESET();
+200004aa:	4681                	li	a3,0
+200004ac:	4601                	li	a2,0
+200004ae:	4581                	li	a1,0
+200004b0:	4511                	li	a0,4
+200004b2:	2265                	jal	2000065a <FLASH_EEPROM_CMD>
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200004b4:	800027f3          	csrr	a5,0x800
+200004b8:	8ba1                	andi	a5,a5,8
+200004ba:	80818713          	addi	a4,gp,-2040 # 200009d0 <IRQ_STA>
+200004be:	cb89                	beqz	a5,200004d0 <HardFault_Handler+0x26>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200004c0:	800027f3          	csrr	a5,0x800
+200004c4:	80f1a423          	sw	a5,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200004c8:	431c                	lw	a5,0(a4)
+200004ca:	9bdd                	andi	a5,a5,-9
+200004cc:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200004d0:	0001                	nop
+200004d2:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200004d4:	400017b7          	lui	a5,0x40001
+200004d8:	05700693          	li	a3,87
+200004dc:	04d78023          	sb	a3,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200004e0:	fa800693          	li	a3,-88
+200004e4:	04d78023          	sb	a3,64(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200004e8:	0001                	nop
+200004ea:	0001                	nop
+HardFault_Handler():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:305
+    sys_safe_access_enable();
+    R16_INT32K_TUNE = 0xFFFF;
+200004ec:	56fd                	li	a3,-1
+200004ee:	02d79623          	sh	a3,44(a5)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+200004f2:	04078023          	sb	zero,64(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200004f6:	800026f3          	csrr	a3,0x800
+200004fa:	431c                	lw	a5,0(a4)
+200004fc:	8ba1                	andi	a5,a5,8
+200004fe:	8fd5                	or	a5,a5,a3
+20000500:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000504:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000508:	0001                	nop
+2000050a:	0001                	nop
+sys_safe_access_enable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+2000050c:	800027f3          	csrr	a5,0x800
+20000510:	8ba1                	andi	a5,a5,8
+20000512:	cb89                	beqz	a5,20000524 <HardFault_Handler+0x7a>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000514:	800027f3          	csrr	a5,0x800
+20000518:	80f1a423          	sw	a5,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+2000051c:	431c                	lw	a5,0(a4)
+2000051e:	9bdd                	andi	a5,a5,-9
+20000520:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000524:	0001                	nop
+20000526:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000528:	400017b7          	lui	a5,0x40001
+2000052c:	05700693          	li	a3,87
+20000530:	04d78023          	sb	a3,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000534:	fa800693          	li	a3,-88
+20000538:	04d78023          	sb	a3,64(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+2000053c:	0001                	nop
+2000053e:	0001                	nop
+HardFault_Handler():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:308
+	sys_safe_access_disable();
+    sys_safe_access_enable();
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+20000540:	0467c683          	lbu	a3,70(a5)
+20000544:	0016e693          	ori	a3,a3,1
+20000548:	04d78323          	sb	a3,70(a5)
+sys_safe_access_disable():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+2000054c:	04078023          	sb	zero,64(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000550:	800026f3          	csrr	a3,0x800
+20000554:	431c                	lw	a5,0(a4)
+20000556:	8ba1                	andi	a5,a5,8
+20000558:	8fd5                	or	a5,a5,a3
+2000055a:	80079073          	csrw	0x800,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000055e:	8001a423          	sw	zero,-2040(gp) # 200009d0 <IRQ_STA>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000562:	0001                	nop
+20000564:	0001                	nop
+HardFault_Handler():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:310 (discriminator 1)
+    sys_safe_access_disable();
+    while(1);
+20000566:	a001                	j	20000566 <HardFault_Handler+0xbc>
+
+20000568 <mDelayuS>:
+mDelayuS():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:329
+{
+    uint32_t i;
+#if(FREQ_SYS == 80000000)
+    i = t * 20;
+#elif(FREQ_SYS == 60000000)
+    i = t * 15;
+20000568:	47bd                	li	a5,15
+2000056a:	02f50533          	mul	a0,a0,a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:353 (discriminator 1)
+#else
+    i = t << 1;
+#endif
+    do
+    {
+        __nop();
+2000056e:	0001                	nop
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:354 (discriminator 1)
+    } while(--i);
+20000570:	157d                	addi	a0,a0,-1
+20000572:	fd75                	bnez	a0,2000056e <mDelayuS+0x6>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:355
+}
+20000574:	8082                	ret
+
+20000576 <mDelaymS>:
+mDelaymS():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:368
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void mDelaymS(uint16_t t)
+{
+20000576:	1141                	addi	sp,sp,-16
+20000578:	c422                	sw	s0,8(sp)
+2000057a:	c226                	sw	s1,4(sp)
+2000057c:	c606                	sw	ra,12(sp)
+2000057e:	84aa                	mv	s1,a0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:371
+    uint16_t i;
+
+    for(i = 0; i < t; i++)
+20000580:	4401                	li	s0,0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:371 (discriminator 1)
+20000582:	00941763          	bne	s0,s1,20000590 <mDelaymS+0x1a>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:375
+    {
+        mDelayuS(1000);
+    }
+}
+20000586:	40b2                	lw	ra,12(sp)
+20000588:	4422                	lw	s0,8(sp)
+2000058a:	4492                	lw	s1,4(sp)
+2000058c:	0141                	addi	sp,sp,16
+2000058e:	8082                	ret
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:371 (discriminator 3)
+    for(i = 0; i < t; i++)
+20000590:	0405                	addi	s0,s0,1
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:373 (discriminator 3)
+        mDelayuS(1000);
+20000592:	3e800513          	li	a0,1000
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:371 (discriminator 3)
+    for(i = 0; i < t; i++)
+20000596:	0442                	slli	s0,s0,0x10
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:373 (discriminator 3)
+        mDelayuS(1000);
+20000598:	3fc1                	jal	20000568 <mDelayuS>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_sys.c:371 (discriminator 3)
+    for(i = 0; i < t; i++)
+2000059a:	8041                	srli	s0,s0,0x10
+2000059c:	b7dd                	j	20000582 <mDelaymS+0xc>
+
+2000059e <FLASH_ROM_BEG>:
+FLASH_ROM_BEG():
+2000059e:	80040323          	sb	zero,-2042(s0)
+200005a2:	4715                	li	a4,5
+200005a4:	80e40323          	sb	a4,-2042(s0)
+200005a8:	0001                	nop
+200005aa:	80a40223          	sb	a0,-2044(s0)
+200005ae:	8082                	ret
+
+200005b0 <FLASH_ROM_END>:
+FLASH_ROM_END():
+200005b0:	80640783          	lb	a5,-2042(s0)
+200005b4:	fe07cee3          	bltz	a5,200005b0 <FLASH_ROM_END>
+200005b8:	80040323          	sb	zero,-2042(s0)
+200005bc:	8082                	ret
+
+200005be <FLASH_ROM_IN>:
+FLASH_ROM_IN():
+200005be:	80640783          	lb	a5,-2042(s0)
+200005c2:	fe07cee3          	bltz	a5,200005be <FLASH_ROM_IN>
+200005c6:	80444503          	lbu	a0,-2044(s0)
+200005ca:	8082                	ret
+
+200005cc <FLASH_ROM_OUT>:
+FLASH_ROM_OUT():
+200005cc:	80640783          	lb	a5,-2042(s0)
+200005d0:	fe07cee3          	bltz	a5,200005cc <FLASH_ROM_OUT>
+200005d4:	80a40223          	sb	a0,-2044(s0)
+200005d8:	8082                	ret
+
+200005da <FLASH_ROM_ADDR>:
+FLASH_ROM_ADDR():
+200005da:	1141                	addi	sp,sp,-16
+200005dc:	c426                	sw	s1,8(sp)
+200005de:	c24a                	sw	s2,4(sp)
+200005e0:	c04e                	sw	s3,0(sp)
+200005e2:	c606                	sw	ra,12(sp)
+200005e4:	0bf57713          	andi	a4,a0,191
+200005e8:	47ad                	li	a5,11
+200005ea:	89aa                	mv	s3,a0
+200005ec:	892e                	mv	s2,a1
+200005ee:	4495                	li	s1,5
+200005f0:	00f70663          	beq	a4,a5,200005fc <FLASH_ROM_ADDR+0x22>
+200005f4:	4519                	li	a0,6
+200005f6:	3765                	jal	2000059e <FLASH_ROM_BEG>
+200005f8:	3f65                	jal	200005b0 <FLASH_ROM_END>
+200005fa:	448d                	li	s1,3
+200005fc:	854e                	mv	a0,s3
+200005fe:	3745                	jal	2000059e <FLASH_ROM_BEG>
+20000600:	59fd                	li	s3,-1
+20000602:	14fd                	addi	s1,s1,-1
+20000604:	01349863          	bne	s1,s3,20000614 <FLASH_ROM_ADDR+0x3a>
+20000608:	40b2                	lw	ra,12(sp)
+2000060a:	44a2                	lw	s1,8(sp)
+2000060c:	4912                	lw	s2,4(sp)
+2000060e:	4982                	lw	s3,0(sp)
+20000610:	0141                	addi	sp,sp,16
+20000612:	8082                	ret
+20000614:	01095513          	srli	a0,s2,0x10
+20000618:	0ff57513          	andi	a0,a0,255
+2000061c:	3f45                	jal	200005cc <FLASH_ROM_OUT>
+2000061e:	0922                	slli	s2,s2,0x8
+20000620:	b7cd                	j	20000602 <FLASH_ROM_ADDR+0x28>
+
+20000622 <FLASH_ROM_WAIT>:
+FLASH_ROM_WAIT():
+20000622:	1101                	addi	sp,sp,-32
+20000624:	cc26                	sw	s1,24(sp)
+20000626:	ce06                	sw	ra,28(sp)
+20000628:	000804b7          	lui	s1,0x80
+2000062c:	3751                	jal	200005b0 <FLASH_ROM_END>
+2000062e:	4515                	li	a0,5
+20000630:	37bd                	jal	2000059e <FLASH_ROM_BEG>
+20000632:	3771                	jal	200005be <FLASH_ROM_IN>
+20000634:	3769                	jal	200005be <FLASH_ROM_IN>
+20000636:	c62a                	sw	a0,12(sp)
+20000638:	3fa5                	jal	200005b0 <FLASH_ROM_END>
+2000063a:	4532                	lw	a0,12(sp)
+2000063c:	00157793          	andi	a5,a0,1
+20000640:	eb89                	bnez	a5,20000652 <FLASH_ROM_WAIT+0x30>
+20000642:	00156513          	ori	a0,a0,1
+20000646:	0ff57513          	andi	a0,a0,255
+2000064a:	40f2                	lw	ra,28(sp)
+2000064c:	44e2                	lw	s1,24(sp)
+2000064e:	6105                	addi	sp,sp,32
+20000650:	8082                	ret
+20000652:	14fd                	addi	s1,s1,-1
+20000654:	fce9                	bnez	s1,2000062e <FLASH_ROM_WAIT+0xc>
+20000656:	4501                	li	a0,0
+20000658:	bfcd                	j	2000064a <FLASH_ROM_WAIT+0x28>
+
+2000065a <FLASH_EEPROM_CMD>:
+FLASH_EEPROM_CMD():
+2000065a:	7139                	addi	sp,sp,-64
+2000065c:	dc26                	sw	s1,56(sp)
+2000065e:	da4a                	sw	s2,52(sp)
+20000660:	d84e                	sw	s3,48(sp)
+20000662:	d652                	sw	s4,44(sp)
+20000664:	d456                	sw	s5,40(sp)
+20000666:	d25a                	sw	s6,36(sp)
+20000668:	d05e                	sw	s7,32(sp)
+2000066a:	de06                	sw	ra,60(sp)
+2000066c:	ce62                	sw	s8,28(sp)
+2000066e:	cc66                	sw	s9,24(sp)
+20000670:	e000e7b7          	lui	a5,0xe000e
+20000674:	577d                	li	a4,-1
+20000676:	0007aa83          	lw	s5,0(a5) # e000e000 <_eusrstack+0xc0006000>
+2000067a:	c622                	sw	s0,12(sp)
+2000067c:	0047aa03          	lw	s4,4(a5)
+20000680:	18e7a023          	sw	a4,384(a5)
+20000684:	18e7a223          	sw	a4,388(a5)
+20000688:	400017b7          	lui	a5,0x40001
+2000068c:	05700713          	li	a4,87
+20000690:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+20000694:	fa800713          	li	a4,-88
+20000698:	04e78023          	sb	a4,64(a5)
+2000069c:	0447c783          	lbu	a5,68(a5)
+200006a0:	ff750b93          	addi	s7,a0,-9
+200006a4:	84b6                	mv	s1,a3
+200006a6:	07e2                	slli	a5,a5,0x18
+200006a8:	0ffbfb93          	andi	s7,s7,255
+200006ac:	4685                	li	a3,1
+200006ae:	89aa                	mv	s3,a0
+200006b0:	8b2e                	mv	s6,a1
+200006b2:	8932                	mv	s2,a2
+200006b4:	40002437          	lui	s0,0x40002
+200006b8:	87e1                	srai	a5,a5,0x18
+200006ba:	5701                	li	a4,-32
+200006bc:	0176fa63          	bgeu	a3,s7,200006d0 <FLASH_EEPROM_CMD+0x76>
+200006c0:	00d50863          	beq	a0,a3,200006d0 <FLASH_EEPROM_CMD+0x76>
+200006c4:	4689                	li	a3,2
+200006c6:	02000713          	li	a4,32
+200006ca:	00d51363          	bne	a0,a3,200006d0 <FLASH_EEPROM_CMD+0x76>
+200006ce:	5701                	li	a4,-32
+200006d0:	8fd9                	or	a5,a5,a4
+200006d2:	0ff7f793          	andi	a5,a5,255
+200006d6:	40001cb7          	lui	s9,0x40001
+200006da:	04fc8223          	sb	a5,68(s9) # 40001044 <_eusrstack+0x1fff9044>
+200006de:	4711                	li	a4,4
+200006e0:	80e40323          	sb	a4,-2042(s0) # 40001806 <_eusrstack+0x1fff9806>
+200006e4:	0ff00513          	li	a0,255
+200006e8:	3d5d                	jal	2000059e <FLASH_ROM_BEG>
+200006ea:	4c09                	li	s8,2
+200006ec:	35d1                	jal	200005b0 <FLASH_ROM_END>
+200006ee:	117c6d63          	bltu	s8,s7,20000808 <FLASH_EEPROM_CMD+0x1ae>
+200006f2:	000705b7          	lui	a1,0x70
+200006f6:	95da                	add	a1,a1,s6
+200006f8:	00078737          	lui	a4,0x78
+200006fc:	5579                	li	a0,-2
+200006fe:	04e5f263          	bgeu	a1,a4,20000742 <FLASH_EEPROM_CMD+0xe8>
+20000702:	009587b3          	add	a5,a1,s1
+20000706:	02f76e63          	bltu	a4,a5,20000742 <FLASH_EEPROM_CMD+0xe8>
+2000070a:	00080b37          	lui	s6,0x80
+2000070e:	47a9                	li	a5,10
+20000710:	0165eb33          	or	s6,a1,s6
+20000714:	06f99963          	bne	s3,a5,20000786 <FLASH_EEPROM_CMD+0x12c>
+20000718:	e489                	bnez	s1,20000722 <FLASH_EEPROM_CMD+0xc8>
+2000071a:	4481                	li	s1,0
+2000071c:	3d51                	jal	200005b0 <FLASH_ROM_END>
+2000071e:	8526                	mv	a0,s1
+20000720:	a00d                	j	20000742 <FLASH_EEPROM_CMD+0xe8>
+20000722:	85da                	mv	a1,s6
+20000724:	4509                	li	a0,2
+20000726:	3d55                	jal	200005da <FLASH_ROM_ADDR>
+20000728:	0905                	addi	s2,s2,1
+2000072a:	fff94503          	lbu	a0,-1(s2)
+2000072e:	14fd                	addi	s1,s1,-1
+20000730:	0b05                	addi	s6,s6,1
+20000732:	3d69                	jal	200005cc <FLASH_ROM_OUT>
+20000734:	c481                	beqz	s1,2000073c <FLASH_EEPROM_CMD+0xe2>
+20000736:	0ffb7793          	andi	a5,s6,255
+2000073a:	f7fd                	bnez	a5,20000728 <FLASH_EEPROM_CMD+0xce>
+2000073c:	35dd                	jal	20000622 <FLASH_ROM_WAIT>
+2000073e:	fd69                	bnez	a0,20000718 <FLASH_EEPROM_CMD+0xbe>
+20000740:	557d                	li	a0,-1
+20000742:	400017b7          	lui	a5,0x40001
+20000746:	05700713          	li	a4,87
+2000074a:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+2000074e:	fa800713          	li	a4,-88
+20000752:	04e78023          	sb	a4,64(a5)
+20000756:	0447c703          	lbu	a4,68(a5)
+2000075a:	8b41                	andi	a4,a4,16
+2000075c:	04e78223          	sb	a4,68(a5)
+20000760:	50f2                	lw	ra,60(sp)
+20000762:	e000e7b7          	lui	a5,0xe000e
+20000766:	1157a023          	sw	s5,256(a5) # e000e100 <_eusrstack+0xc0006100>
+2000076a:	1147a223          	sw	s4,260(a5)
+2000076e:	54e2                	lw	s1,56(sp)
+20000770:	4432                	lw	s0,12(sp)
+20000772:	5952                	lw	s2,52(sp)
+20000774:	59c2                	lw	s3,48(sp)
+20000776:	5a32                	lw	s4,44(sp)
+20000778:	5aa2                	lw	s5,40(sp)
+2000077a:	5b12                	lw	s6,36(sp)
+2000077c:	5b82                	lw	s7,32(sp)
+2000077e:	4c72                	lw	s8,28(sp)
+20000780:	4ce2                	lw	s9,24(sp)
+20000782:	6121                	addi	sp,sp,64
+20000784:	8082                	ret
+20000786:	47a5                	li	a5,9
+20000788:	06f99563          	bne	s3,a5,200007f2 <FLASH_EEPROM_CMD+0x198>
+2000078c:	6985                	lui	s3,0x1
+2000078e:	0ff00913          	li	s2,255
+20000792:	009906b3          	add	a3,s2,s1
+20000796:	012b74b3          	and	s1,s6,s2
+2000079a:	94b6                	add	s1,s1,a3
+2000079c:	fff94913          	not	s2,s2
+200007a0:	009974b3          	and	s1,s2,s1
+200007a4:	6b85                	lui	s7,0x1
+200007a6:	01697933          	and	s2,s2,s6
+200007aa:	6b41                	lui	s6,0x10
+200007ac:	fff98793          	addi	a5,s3,-1 # fff <_data_lma+0x33f>
+200007b0:	0127f7b3          	and	a5,a5,s2
+200007b4:	e399                	bnez	a5,200007ba <FLASH_EEPROM_CMD+0x160>
+200007b6:	0134fc63          	bgeu	s1,s3,200007ce <FLASH_EEPROM_CMD+0x174>
+200007ba:	0049d993          	srli	s3,s3,0x4
+200007be:	47c1                	li	a5,16
+200007c0:	ff37e6e3          	bltu	a5,s3,200007ac <FLASH_EEPROM_CMD+0x152>
+200007c4:	bf99                	j	2000071a <FLASH_EEPROM_CMD+0xc0>
+200007c6:	6905                	lui	s2,0x1
+200007c8:	69c1                	lui	s3,0x10
+200007ca:	197d                	addi	s2,s2,-1
+200007cc:	b7d9                	j	20000792 <FLASH_EEPROM_CMD+0x138>
+200007ce:	0d800513          	li	a0,216
+200007d2:	01698863          	beq	s3,s6,200007e2 <FLASH_EEPROM_CMD+0x188>
+200007d6:	02000513          	li	a0,32
+200007da:	01798463          	beq	s3,s7,200007e2 <FLASH_EEPROM_CMD+0x188>
+200007de:	08100513          	li	a0,129
+200007e2:	85ca                	mv	a1,s2
+200007e4:	3bdd                	jal	200005da <FLASH_ROM_ADDR>
+200007e6:	3d35                	jal	20000622 <FLASH_ROM_WAIT>
+200007e8:	dd21                	beqz	a0,20000740 <FLASH_EEPROM_CMD+0xe6>
+200007ea:	994e                	add	s2,s2,s3
+200007ec:	413484b3          	sub	s1,s1,s3
+200007f0:	b7d9                	j	200007b6 <FLASH_EEPROM_CMD+0x15c>
+200007f2:	85da                	mv	a1,s6
+200007f4:	452d                	li	a0,11
+200007f6:	33d5                	jal	200005da <FLASH_ROM_ADDR>
+200007f8:	94ca                	add	s1,s1,s2
+200007fa:	f29900e3          	beq	s2,s1,2000071a <FLASH_EEPROM_CMD+0xc0>
+200007fe:	0905                	addi	s2,s2,1
+20000800:	3b7d                	jal	200005be <FLASH_ROM_IN>
+20000802:	fea90fa3          	sb	a0,-1(s2) # fff <_data_lma+0x33f>
+20000806:	bfd5                	j	200007fa <FLASH_EEPROM_CMD+0x1a0>
+20000808:	fff98793          	addi	a5,s3,-1 # ffff <_data_lma+0xf33f>
+2000080c:	0ff7f793          	andi	a5,a5,255
+20000810:	0cfc6163          	bltu	s8,a5,200008d2 <.loop402+0x7a>
+20000814:	041cc783          	lbu	a5,65(s9)
+20000818:	08300713          	li	a4,131
+2000081c:	04f71f63          	bne	a4,a5,2000087a <.loop402+0x22>
+20000820:	00080737          	lui	a4,0x80
+20000824:	04eb6b63          	bltu	s6,a4,2000087a <.loop402+0x22>
+20000828:	009b07b3          	add	a5,s6,s1
+2000082c:	001006b7          	lui	a3,0x100
+20000830:	04d7f563          	bgeu	a5,a3,2000087a <.loop402+0x22>
+20000834:	00eb4b33          	xor	s6,s6,a4
+20000838:	4789                	li	a5,2
+2000083a:	06f99363          	bne	s3,a5,200008a0 <.loop402+0x48>
+2000083e:	8089                	srli	s1,s1,0x2
+20000840:	49d5                	li	s3,21
+20000842:	ec048ce3          	beqz	s1,2000071a <FLASH_EEPROM_CMD+0xc0>
+20000846:	85da                	mv	a1,s6
+20000848:	4509                	li	a0,2
+2000084a:	3b41                	jal	200005da <FLASH_ROM_ADDR>
+2000084c:	0911                	addi	s2,s2,4
+2000084e:	ffc92703          	lw	a4,-4(s2)
+20000852:	4791                	li	a5,4
+20000854:	80e42023          	sw	a4,-2048(s0)
+
+20000858 <.loop402>:
+20000858:	80640703          	lb	a4,-2042(s0)
+2000085c:	fe074ee3          	bltz	a4,20000858 <.loop402>
+20000860:	81340323          	sb	s3,-2042(s0)
+20000864:	17fd                	addi	a5,a5,-1
+20000866:	fbed                	bnez	a5,20000858 <.loop402>
+20000868:	14fd                	addi	s1,s1,-1
+2000086a:	0b11                	addi	s6,s6,4
+2000086c:	c481                	beqz	s1,20000874 <.loop402+0x1c>
+2000086e:	0ffb7793          	andi	a5,s6,255
+20000872:	ffe9                	bnez	a5,2000084c <FLASH_EEPROM_CMD+0x1f2>
+20000874:	337d                	jal	20000622 <FLASH_ROM_WAIT>
+20000876:	f571                	bnez	a0,20000842 <FLASH_EEPROM_CMD+0x1e8>
+20000878:	b5e1                	j	20000740 <FLASH_EEPROM_CMD+0xe6>
+2000087a:	400017b7          	lui	a5,0x40001
+2000087e:	0457c703          	lbu	a4,69(a5) # 40001045 <_eusrstack+0x1fff9045>
+20000882:	000807b7          	lui	a5,0x80
+20000886:	02077713          	andi	a4,a4,32
+2000088a:	e319                	bnez	a4,20000890 <.loop402+0x38>
+2000088c:	000787b7          	lui	a5,0x78
+20000890:	5579                	li	a0,-2
+20000892:	eafb78e3          	bgeu	s6,a5,20000742 <FLASH_EEPROM_CMD+0xe8>
+20000896:	009b0733          	add	a4,s6,s1
+2000089a:	f8e7ffe3          	bgeu	a5,a4,20000838 <FLASH_EEPROM_CMD+0x1de>
+2000089e:	b555                	j	20000742 <FLASH_EEPROM_CMD+0xe8>
+200008a0:	4785                	li	a5,1
+200008a2:	f2f982e3          	beq	s3,a5,200007c6 <FLASH_EEPROM_CMD+0x16c>
+200008a6:	85da                	mv	a1,s6
+200008a8:	452d                	li	a0,11
+200008aa:	3b05                	jal	200005da <FLASH_ROM_ADDR>
+200008ac:	fff48993          	addi	s3,s1,-1 # 7ffff <_data_lma+0x7f33f>
+200008b0:	e60485e3          	beqz	s1,2000071a <FLASH_EEPROM_CMD+0xc0>
+200008b4:	3329                	jal	200005be <FLASH_ROM_IN>
+200008b6:	0039f793          	andi	a5,s3,3
+200008ba:	eb91                	bnez	a5,200008ce <.loop402+0x76>
+200008bc:	80042683          	lw	a3,-2048(s0)
+200008c0:	00092703          	lw	a4,0(s2)
+200008c4:	00490793          	addi	a5,s2,4
+200008c8:	e4e69ae3          	bne	a3,a4,2000071c <FLASH_EEPROM_CMD+0xc2>
+200008cc:	893e                	mv	s2,a5
+200008ce:	84ce                	mv	s1,s3
+200008d0:	bff1                	j	200008ac <.loop402+0x54>
+200008d2:	47b5                	li	a5,13
+200008d4:	00f99663          	bne	s3,a5,200008e0 <.loop402+0x88>
+200008d8:	0b900513          	li	a0,185
+200008dc:	31c9                	jal	2000059e <FLASH_ROM_BEG>
+200008de:	bd35                	j	2000071a <FLASH_EEPROM_CMD+0xc0>
+200008e0:	47b1                	li	a5,12
+200008e2:	0ab00513          	li	a0,171
+200008e6:	fef98be3          	beq	s3,a5,200008dc <.loop402+0x84>
+200008ea:	4799                	li	a5,6
+200008ec:	04f99163          	bne	s3,a5,2000092e <.loop402+0xd6>
+200008f0:	000805b7          	lui	a1,0x80
+200008f4:	00bb65b3          	or	a1,s6,a1
+200008f8:	452d                	li	a0,11
+200008fa:	31c5                	jal	200005da <FLASH_ROM_ADDR>
+200008fc:	4481                	li	s1,0
+200008fe:	4b8d                	li	s7,3
+20000900:	49a1                	li	s3,8
+20000902:	3975                	jal	200005be <FLASH_ROM_IN>
+20000904:	01749663          	bne	s1,s7,20000910 <.loop402+0xb8>
+20000908:	80042783          	lw	a5,-2048(s0)
+2000090c:	00f92023          	sw	a5,0(s2)
+20000910:	0485                	addi	s1,s1,1
+20000912:	ff3498e3          	bne	s1,s3,20000902 <.loop402+0xaa>
+20000916:	80042783          	lw	a5,-2048(s0)
+2000091a:	012b1713          	slli	a4,s6,0x12
+2000091e:	00075563          	bgez	a4,20000928 <.loop402+0xd0>
+20000922:	00f91223          	sh	a5,4(s2)
+20000926:	bbd5                	j	2000071a <FLASH_EEPROM_CMD+0xc0>
+20000928:	00f92223          	sw	a5,4(s2)
+2000092c:	b3fd                	j	2000071a <FLASH_EEPROM_CMD+0xc0>
+2000092e:	479d                	li	a5,7
+20000930:	02f99963          	bne	s3,a5,20000962 <.loop402+0x10a>
+20000934:	4581                	li	a1,0
+20000936:	04b00513          	li	a0,75
+2000093a:	3145                	jal	200005da <FLASH_ROM_ADDR>
+2000093c:	44bd                	li	s1,15
+2000093e:	00092023          	sw	zero,0(s2)
+20000942:	00092223          	sw	zero,4(s2)
+20000946:	59fd                	li	s3,-1
+20000948:	399d                	jal	200005be <FLASH_ROM_IN>
+2000094a:	0074f793          	andi	a5,s1,7
+2000094e:	97ca                	add	a5,a5,s2
+20000950:	0007c703          	lbu	a4,0(a5) # 78000 <_data_lma+0x77340>
+20000954:	14fd                	addi	s1,s1,-1
+20000956:	8d39                	xor	a0,a0,a4
+20000958:	00a78023          	sb	a0,0(a5)
+2000095c:	ff3496e3          	bne	s1,s3,20000948 <.loop402+0xf0>
+20000960:	bb6d                	j	2000071a <FLASH_EEPROM_CMD+0xc0>
+20000962:	47a1                	li	a5,8
+20000964:	04f99263          	bne	s3,a5,200009a8 <.loop402+0x150>
+20000968:	396d                	jal	20000622 <FLASH_ROM_WAIT>
+2000096a:	4481                	li	s1,0
+2000096c:	000b0d63          	beqz	s6,20000986 <.loop402+0x12e>
+20000970:	478d                	li	a5,3
+20000972:	03c00493          	li	s1,60
+20000976:	00fb0863          	beq	s6,a5,20000986 <.loop402+0x12e>
+2000097a:	05000493          	li	s1,80
+2000097e:	018b0463          	beq	s6,s8,20000986 <.loop402+0x12e>
+20000982:	04400493          	li	s1,68
+20000986:	07c57513          	andi	a0,a0,124
+2000098a:	d89508e3          	beq	a0,s1,2000071a <FLASH_EEPROM_CMD+0xc0>
+2000098e:	4519                	li	a0,6
+20000990:	3139                	jal	2000059e <FLASH_ROM_BEG>
+20000992:	3939                	jal	200005b0 <FLASH_ROM_END>
+20000994:	4505                	li	a0,1
+20000996:	3121                	jal	2000059e <FLASH_ROM_BEG>
+20000998:	8526                	mv	a0,s1
+2000099a:	390d                	jal	200005cc <FLASH_ROM_OUT>
+2000099c:	4509                	li	a0,2
+2000099e:	313d                	jal	200005cc <FLASH_ROM_OUT>
+200009a0:	3149                	jal	20000622 <FLASH_ROM_WAIT>
+200009a2:	d6051ce3          	bnez	a0,2000071a <FLASH_EEPROM_CMD+0xc0>
+200009a6:	bb69                	j	20000740 <FLASH_EEPROM_CMD+0xe6>
+200009a8:	4791                	li	a5,4
+200009aa:	00f99963          	bne	s3,a5,200009bc <.loop402+0x164>
+200009ae:	06600513          	li	a0,102
+200009b2:	36f5                	jal	2000059e <FLASH_ROM_BEG>
+200009b4:	3ef5                	jal	200005b0 <FLASH_ROM_END>
+200009b6:	09900513          	li	a0,153
+200009ba:	b70d                	j	200008dc <.loop402+0x84>
+200009bc:	d4098fe3          	beqz	s3,2000071a <FLASH_EEPROM_CMD+0xc0>
+200009c0:	54f1                	li	s1,-4
+200009c2:	bba9                	j	2000071c <FLASH_EEPROM_CMD+0xc2>
+
+Disassembly of section .text:
+
+000009c8 <handle_reset>:
+handle_reset():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:129
+	.weak	handle_reset
+	.align	1
+handle_reset:
+.option push 
+.option	norelax 
+	la gp, __global_pointer$
+ 9c8:	20001197          	auipc	gp,0x20001
+ 9cc:	80018193          	addi	gp,gp,-2048 # 200011c8 <__global_pointer$>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:132
+.option	pop 
+1:
+	la sp, _eusrstack 
+ 9d0:	20007117          	auipc	sp,0x20007
+ 9d4:	63010113          	addi	sp,sp,1584 # 20008000 <_eusrstack>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:136
+
+/* Load highcode code  section from flash to RAM */
+2:
+    la a0, _highcode_lma
+ 9d8:	00400513          	li	a0,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:137
+    la a1, _highcode_vma_start
+ 9dc:	1ffff597          	auipc	a1,0x1ffff
+ 9e0:	62458593          	addi	a1,a1,1572 # 20000000 <_highcode_vma_start>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:138
+    la a2, _highcode_vma_end
+ 9e4:	20000617          	auipc	a2,0x20000
+ 9e8:	fe060613          	addi	a2,a2,-32 # 200009c4 <_highcode_vma_end>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:139
+    bgeu a1, a2, 2f
+ 9ec:	00c5fa63          	bgeu	a1,a2,a00 <handle_reset+0x38>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:141
+1:
+    lw t0, (a0)
+ 9f0:	00052283          	lw	t0,0(a0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:142
+    sw t0, (a1)
+ 9f4:	0055a023          	sw	t0,0(a1)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:143
+    addi a0, a0, 4
+ 9f8:	0511                	addi	a0,a0,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:144
+    addi a1, a1, 4
+ 9fa:	0591                	addi	a1,a1,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:145
+    bltu a1, a2, 1b
+ 9fc:	fec5eae3          	bltu	a1,a2,9f0 <handle_reset+0x28>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:149
+
+/* Load data section from flash to RAM */
+2:
+	la a0, _data_lma
+ a00:	00000517          	auipc	a0,0x0
+ a04:	2c050513          	addi	a0,a0,704 # cc0 <_data_lma>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:150
+	la a1, _data_vma
+ a08:	20000597          	auipc	a1,0x20000
+ a0c:	fbc58593          	addi	a1,a1,-68 # 200009c4 <_highcode_vma_end>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:151
+	la a2, _edata
+ a10:	20000617          	auipc	a2,0x20000
+ a14:	fb860613          	addi	a2,a2,-72 # 200009c8 <_edata>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:152
+	bgeu a1, a2, 2f
+ a18:	00c5fa63          	bgeu	a1,a2,a2c <handle_reset+0x64>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:154
+1:
+	lw t0, (a0)
+ a1c:	00052283          	lw	t0,0(a0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:155
+	sw t0, (a1)
+ a20:	0055a023          	sw	t0,0(a1)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:156
+	addi a0, a0, 4
+ a24:	0511                	addi	a0,a0,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:157
+	addi a1, a1, 4
+ a26:	0591                	addi	a1,a1,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:158
+	bltu a1, a2, 1b
+ a28:	fec5eae3          	bltu	a1,a2,a1c <handle_reset+0x54>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:161
+2:
+	/* clear bss section */
+	la a0, _sbss
+ a2c:	20000517          	auipc	a0,0x20000
+ a30:	f9c50513          	addi	a0,a0,-100 # 200009c8 <_edata>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:162
+	la a1, _ebss
+ a34:	80c18593          	addi	a1,gp,-2036 # 200009d4 <_ebss>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:163
+	bgeu a0, a1, 2f
+ a38:	00b57763          	bgeu	a0,a1,a46 <handle_reset+0x7e>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:165
+1:
+	sw zero, (a0)
+ a3c:	00052023          	sw	zero,0(a0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:166
+	addi a0, a0, 4
+ a40:	0511                	addi	a0,a0,4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:167
+	bltu a0, a1, 1b
+ a42:	feb56de3          	bltu	a0,a1,a3c <handle_reset+0x74>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:170
+2:
+	/* 流水线控制位 & 动态预测控制位 */
+	li t0, 0x1f
+ a46:	42fd                	li	t0,31
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:171
+	csrw 0xbc0, t0
+ a48:	bc029073          	csrw	0xbc0,t0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:173
+	/* 打开嵌套中断、硬件压栈功能 */
+	li t0, 0x3
+ a4c:	428d                	li	t0,3
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:174
+	csrw 0x804, t0
+ a4e:	80429073          	csrw	0x804,t0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:176
+	
+    li t0, 0x88
+ a52:	08800293          	li	t0,136
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:177
+    csrw mstatus, t0
+ a56:	30029073          	csrw	mstatus,t0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:178
+	la t0, _vector_base
+ a5a:	1ffff297          	auipc	t0,0x1ffff
+ a5e:	5a628293          	addi	t0,t0,1446 # 20000000 <_highcode_vma_start>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:181
+
+	/* 配置向量表模式为绝对地址模式 */
+    ori t0, t0, 3
+ a62:	0032e293          	ori	t0,t0,3
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:182
+	csrw mtvec, t0
+ a66:	30529073          	csrw	mtvec,t0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:184
+
+	la t0, main
+ a6a:	00000297          	auipc	t0,0x0
+ a6e:	01028293          	addi	t0,t0,16 # a7a <main>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:185
+	csrw mepc, t0
+ a72:	34129073          	csrw	mepc,t0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../Startup/startup_CH583.S:188
+	
+	
+	mret
+ a76:	30200073          	mret
+
+00000a7a <main>:
+main():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:39
+{
+ a7a:	1101                	addi	sp,sp,-32
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:42
+    GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeIN_PU);
+ a7c:	4585                	li	a1,1
+ a7e:	4541                	li	a0,16
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:39
+{
+ a80:	ce06                	sw	ra,28(sp)
+ a82:	cc22                	sw	s0,24(sp)
+ a84:	ca26                	sw	s1,20(sp)
+ a86:	c84a                	sw	s2,16(sp)
+ a88:	c64e                	sw	s3,12(sp)
+ a8a:	c452                	sw	s4,8(sp)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:42
+    GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeIN_PU);
+ a8c:	20fd                	jal	b7a <GPIOB_ModeCfg>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:43
+    GPIOB_ITModeCfg(GPIO_Pin_4, GPIO_ITMode_LowLevel);   // Настраиваем PB4 На прерывание при низком уровне
+ a8e:	4581                	li	a1,0
+ a90:	4541                	li	a0,16
+ a92:	2279                	jal	c20 <GPIOB_ITModeCfg>
+PFIC_EnableIRQ():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../RVMSIS/core_riscv.h:112
+ *
+ * @param   IRQn    - Interrupt Numbers
+ */
+RV_STATIC_INLINE void PFIC_EnableIRQ(IRQn_Type IRQn)
+{
+    PFIC->IENR[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn)&0x1F));
+ a94:	00040737          	lui	a4,0x40
+ a98:	e000e7b7          	lui	a5,0xe000e
+ a9c:	10e7a023          	sw	a4,256(a5) # e000e100 <_eusrstack+0xc0006100>
+main():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:46
+    GPIOB_SetBits(GPIO_Pin_18);                         // Установка PB18 на выход
+ aa0:	40001437          	lui	s0,0x40001
+ aa4:	0c842783          	lw	a5,200(s0) # 400010c8 <_eusrstack+0x1fff90c8>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:47
+    GPIOB_ModeCfg(GPIO_Pin_18, GPIO_ModeOut_PP_5mA);
+ aa8:	458d                	li	a1,3
+ aaa:	00040537          	lui	a0,0x40
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:46
+    GPIOB_SetBits(GPIO_Pin_18);                         // Установка PB18 на выход
+ aae:	8fd9                	or	a5,a5,a4
+ ab0:	0cf42423          	sw	a5,200(s0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:47
+    GPIOB_ModeCfg(GPIO_Pin_18, GPIO_ModeOut_PP_5mA);
+ ab4:	20d9                	jal	b7a <GPIOB_ModeCfg>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:49
+    GPIOB_SetBits(GPIO_Pin_19);                         // Установка PB19 на выход
+ ab6:	0c842783          	lw	a5,200(s0)
+ aba:	00080737          	lui	a4,0x80
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:50
+    GPIOB_ModeCfg(GPIO_Pin_19, GPIO_ModeOut_PP_5mA);
+ abe:	458d                	li	a1,3
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:49
+    GPIOB_SetBits(GPIO_Pin_19);                         // Установка PB19 на выход
+ ac0:	8fd9                	or	a5,a5,a4
+ ac2:	0cf42423          	sw	a5,200(s0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:50
+    GPIOB_ModeCfg(GPIO_Pin_19, GPIO_ModeOut_PP_5mA);
+ ac6:	00080537          	lui	a0,0x80
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:57
+        if(((time / 1000)/60 >= DELAY_BLINK) && (flag_led == false)){
+ aca:	64bd                	lui	s1,0xf
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:50
+    GPIOB_ModeCfg(GPIO_Pin_19, GPIO_ModeOut_PP_5mA);
+ acc:	207d                	jal	b7a <GPIOB_ModeCfg>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:57
+        if(((time / 1000)/60 >= DELAY_BLINK) && (flag_led == false)){
+ ace:	20000917          	auipc	s2,0x20000
+ ad2:	efe90913          	addi	s2,s2,-258 # 200009cc <time>
+ ad6:	a5f48493          	addi	s1,s1,-1441 # ea5f <_data_lma+0xdd9f>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:66
+        GPIOB_SetBits(GPIO_Pin_18);
+ ada:	000409b7          	lui	s3,0x40
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:72
+        if (interrupt_flag){
+ ade:	20000a17          	auipc	s4,0x20000
+ ae2:	eeba0a13          	addi	s4,s4,-277 # 200009c9 <interrupt_flag>
+ ae6:	20000797          	auipc	a5,0x20000
+ aea:	ee27c783          	lbu	a5,-286(a5) # 200009c8 <_edata>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:39
+{
+ aee:	4701                	li	a4,0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:57
+        if(((time / 1000)/60 >= DELAY_BLINK) && (flag_led == false)){
+ af0:	00092683          	lw	a3,0(s2)
+ af4:	02d4fd63          	bgeu	s1,a3,b2e <main+0xb4>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:57 (discriminator 1)
+ af8:	ef99                	bnez	a5,b16 <main+0x9c>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:58
+        time = 0;
+ afa:	20000797          	auipc	a5,0x20000
+ afe:	ec07a923          	sw	zero,-302(a5) # 200009cc <time>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:60
+        GPIOB_ResetBits(GPIO_Pin_18);
+ b02:	0cc42783          	lw	a5,204(s0)
+ b06:	0137e7b3          	or	a5,a5,s3
+ b0a:	0cf42623          	sw	a5,204(s0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:63
+        if(((time / 1000)/60 >= DELAY_BLINK) && (flag_led)){
+ b0e:	00092783          	lw	a5,0(s2)
+ b12:	06f4f163          	bgeu	s1,a5,b74 <main+0xfa>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:64
+        time = 0;
+ b16:	20000797          	auipc	a5,0x20000
+ b1a:	ea07ab23          	sw	zero,-330(a5) # 200009cc <time>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:66
+        GPIOB_SetBits(GPIO_Pin_18);
+ b1e:	0c842783          	lw	a5,200(s0)
+ b22:	4705                	li	a4,1
+ b24:	0137e7b3          	or	a5,a5,s3
+ b28:	0cf42423          	sw	a5,200(s0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:65
+        flag_led = false;
+ b2c:	4781                	li	a5,0
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:68
+        time++;
+ b2e:	00092683          	lw	a3,0(s2)
+ b32:	0685                	addi	a3,a3,1
+ b34:	20000617          	auipc	a2,0x20000
+ b38:	e8d62c23          	sw	a3,-360(a2) # 200009cc <time>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:72
+        if (interrupt_flag){
+ b3c:	000a4683          	lbu	a3,0(s4)
+ b40:	0ff6f693          	andi	a3,a3,255
+ b44:	d6d5                	beqz	a3,af0 <main+0x76>
+ b46:	c709                	beqz	a4,b50 <main+0xd6>
+ b48:	20000717          	auipc	a4,0x20000
+ b4c:	e8f70023          	sb	a5,-384(a4) # 200009c8 <_edata>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:73
+            GPIOB_InverseBits(GPIO_Pin_19);
+ b50:	0c842783          	lw	a5,200(s0)
+ b54:	00080737          	lui	a4,0x80
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:74
+            DelayMs(50);                       //Защита от дребезга
+ b58:	03200513          	li	a0,50
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:73
+            GPIOB_InverseBits(GPIO_Pin_19);
+ b5c:	8fb9                	xor	a5,a5,a4
+ b5e:	0cf42423          	sw	a5,200(s0)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:74
+            DelayMs(50);                       //Защита от дребезга
+ b62:	20000097          	auipc	ra,0x20000
+ b66:	a14080e7          	jalr	-1516(ra) # 20000576 <mDelaymS>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:75
+            interrupt_flag = false;
+ b6a:	20000797          	auipc	a5,0x20000
+ b6e:	e4078fa3          	sb	zero,-417(a5) # 200009c9 <interrupt_flag>
+ b72:	bf95                	j	ae6 <main+0x6c>
+ b74:	4705                	li	a4,1
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../src/Main.c:59
+        flag_led = true;
+ b76:	4785                	li	a5,1
+ b78:	bf5d                	j	b2e <main+0xb4>
+
+00000b7a <GPIOB_ModeCfg>:
+GPIOB_ModeCfg():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:74
+ *
+ * @return  none
+ */
+void GPIOB_ModeCfg(uint32_t pin, GPIOModeTypeDef mode)
+{
+    switch(mode)
+ b7a:	4791                	li	a5,4
+ b7c:	02b7ee63          	bltu	a5,a1,bb8 <GPIOB_ModeCfg+0x3e>
+ b80:	00000717          	auipc	a4,0x0
+ b84:	12c70713          	addi	a4,a4,300 # cac <GPIOB_ITModeCfg+0x8c>
+ b88:	058a                	slli	a1,a1,0x2
+ b8a:	95ba                	add	a1,a1,a4
+ b8c:	419c                	lw	a5,0(a1)
+ b8e:	97ba                	add	a5,a5,a4
+ b90:	8782                	jr	a5
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:77
+    {
+        case GPIO_ModeIN_Floating:
+            R32_PB_PD_DRV &= ~pin;
+ b92:	400017b7          	lui	a5,0x40001
+ b96:	0d47a703          	lw	a4,212(a5) # 400010d4 <_eusrstack+0x1fff90d4>
+ b9a:	fff54513          	not	a0,a0
+ b9e:	8f69                	and	a4,a4,a0
+ ba0:	0ce7aa23          	sw	a4,212(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:78
+            R32_PB_PU &= ~pin;
+ ba4:	0d07a703          	lw	a4,208(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:90
+            R32_PB_DIR &= ~pin;
+            break;
+
+        case GPIO_ModeIN_PD:
+            R32_PB_PD_DRV |= pin;
+            R32_PB_PU &= ~pin;
+ ba8:	8f69                	and	a4,a4,a0
+ baa:	0ce7a823          	sw	a4,208(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:91
+            R32_PB_DIR &= ~pin;
+ bae:	0c07a703          	lw	a4,192(a5)
+ bb2:	8d79                	and	a0,a0,a4
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:101
+            R32_PB_DIR |= pin;
+            break;
+
+        case GPIO_ModeOut_PP_20mA:
+            R32_PB_PD_DRV |= pin;
+            R32_PB_DIR |= pin;
+ bb4:	0ca7a023          	sw	a0,192(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:107
+            break;
+
+        default:
+            break;
+    }
+}
+ bb8:	8082                	ret
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:83
+            R32_PB_PD_DRV &= ~pin;
+ bba:	400017b7          	lui	a5,0x40001
+ bbe:	0d47a683          	lw	a3,212(a5) # 400010d4 <_eusrstack+0x1fff90d4>
+ bc2:	fff54713          	not	a4,a0
+ bc6:	8ef9                	and	a3,a3,a4
+ bc8:	0cd7aa23          	sw	a3,212(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:84
+            R32_PB_PU |= pin;
+ bcc:	0d07a683          	lw	a3,208(a5)
+ bd0:	8d55                	or	a0,a0,a3
+ bd2:	0ca7a823          	sw	a0,208(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:85
+            R32_PB_DIR &= ~pin;
+ bd6:	0c07a683          	lw	a3,192(a5)
+ bda:	8f75                	and	a4,a4,a3
+ bdc:	0ce7a023          	sw	a4,192(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:86
+            break;
+ be0:	8082                	ret
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:89
+            R32_PB_PD_DRV |= pin;
+ be2:	400017b7          	lui	a5,0x40001
+ be6:	0d47a703          	lw	a4,212(a5) # 400010d4 <_eusrstack+0x1fff90d4>
+ bea:	8f49                	or	a4,a4,a0
+ bec:	0ce7aa23          	sw	a4,212(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:90
+            R32_PB_PU &= ~pin;
+ bf0:	0d07a703          	lw	a4,208(a5)
+ bf4:	fff54513          	not	a0,a0
+ bf8:	bf45                	j	ba8 <GPIOB_ModeCfg+0x2e>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:95
+            R32_PB_PD_DRV &= ~pin;
+ bfa:	400017b7          	lui	a5,0x40001
+ bfe:	0d47a683          	lw	a3,212(a5) # 400010d4 <_eusrstack+0x1fff90d4>
+ c02:	fff54713          	not	a4,a0
+ c06:	8f75                	and	a4,a4,a3
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:100
+            R32_PB_PD_DRV |= pin;
+ c08:	0ce7aa23          	sw	a4,212(a5)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:101
+            R32_PB_DIR |= pin;
+ c0c:	0c07a703          	lw	a4,192(a5)
+ c10:	8d59                	or	a0,a0,a4
+ c12:	b74d                	j	bb4 <GPIOB_ModeCfg+0x3a>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:100
+            R32_PB_PD_DRV |= pin;
+ c14:	400017b7          	lui	a5,0x40001
+ c18:	0d47a703          	lw	a4,212(a5) # 400010d4 <_eusrstack+0x1fff90d4>
+ c1c:	8f49                	or	a4,a4,a0
+ c1e:	b7ed                	j	c08 <GPIOB_ModeCfg+0x8e>
+
+00000c20 <GPIOB_ITModeCfg>:
+GPIOB_ITModeCfg():
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:162
+ *
+ * @return  none
+ */
+void GPIOB_ITModeCfg(uint32_t pin, GPIOITModeTpDef mode)
+{
+    uint32_t Pin = pin | ((pin & (GPIO_Pin_22 | GPIO_Pin_23)) >> 14);
+ c20:	00e55793          	srli	a5,a0,0xe
+ c24:	3007f793          	andi	a5,a5,768
+ c28:	8fc9                	or	a5,a5,a0
+ c2a:	07c2                	slli	a5,a5,0x10
+ c2c:	4705                	li	a4,1
+ c2e:	83c1                	srli	a5,a5,0x10
+ c30:	04e58263          	beq	a1,a4,c74 <GPIOB_ITModeCfg+0x54>
+ c34:	c18d                	beqz	a1,c56 <GPIOB_ITModeCfg+0x36>
+ c36:	4709                	li	a4,2
+ c38:	04e58d63          	beq	a1,a4,c92 <GPIOB_ITModeCfg+0x72>
+ c3c:	470d                	li	a4,3
+ c3e:	06e58063          	beq	a1,a4,c9e <GPIOB_ITModeCfg+0x7e>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:188
+            break;
+
+        default:
+            break;
+    }
+    R16_PB_INT_IF = Pin;
+ c42:	40001737          	lui	a4,0x40001
+ c46:	08f71f23          	sh	a5,158(a4) # 4000109e <_eusrstack+0x1fff909e>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:189
+    R16_PB_INT_EN |= Pin;
+ c4a:	09275683          	lhu	a3,146(a4)
+ c4e:	8fd5                	or	a5,a5,a3
+ c50:	08f71923          	sh	a5,146(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:190
+}
+ c54:	8082                	ret
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:166
+            R16_PB_INT_MODE &= ~Pin;
+ c56:	40001737          	lui	a4,0x40001
+ c5a:	09675603          	lhu	a2,150(a4) # 40001096 <_eusrstack+0x1fff9096>
+ c5e:	fff7c693          	not	a3,a5
+ c62:	8ef1                	and	a3,a3,a2
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:176
+            R16_PB_INT_MODE |= Pin;
+ c64:	08d71b23          	sh	a3,150(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:177
+            R32_PB_CLR |= pin;
+ c68:	0cc72683          	lw	a3,204(a4)
+ c6c:	8d55                	or	a0,a0,a3
+ c6e:	0ca72623          	sw	a0,204(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:178
+            break;
+ c72:	bfc1                	j	c42 <GPIOB_ITModeCfg+0x22>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:171
+            R16_PB_INT_MODE &= ~Pin;
+ c74:	40001737          	lui	a4,0x40001
+ c78:	09675603          	lhu	a2,150(a4) # 40001096 <_eusrstack+0x1fff9096>
+ c7c:	fff7c693          	not	a3,a5
+ c80:	8ef1                	and	a3,a3,a2
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:181
+            R16_PB_INT_MODE |= Pin;
+ c82:	08d71b23          	sh	a3,150(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:182
+            R32_PB_OUT |= pin;
+ c86:	0c872683          	lw	a3,200(a4)
+ c8a:	8d55                	or	a0,a0,a3
+ c8c:	0ca72423          	sw	a0,200(a4)
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:183
+            break;
+ c90:	bf4d                	j	c42 <GPIOB_ITModeCfg+0x22>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:176
+            R16_PB_INT_MODE |= Pin;
+ c92:	40001737          	lui	a4,0x40001
+ c96:	09675683          	lhu	a3,150(a4) # 40001096 <_eusrstack+0x1fff9096>
+ c9a:	8edd                	or	a3,a3,a5
+ c9c:	b7e1                	j	c64 <GPIOB_ITModeCfg+0x44>
+C:\Users\v.tsaregorodtsev\Documents\vch\ch583-main\EVT\EXAM\Gpio_CH583\obj/../StdPeriphDriver/CH58x_gpio.c:181
+            R16_PB_INT_MODE |= Pin;
+ c9e:	40001737          	lui	a4,0x40001
+ ca2:	09675683          	lhu	a3,150(a4) # 40001096 <_eusrstack+0x1fff9096>
+ ca6:	8edd                	or	a3,a3,a5
+ ca8:	bfe9                	j	c82 <GPIOB_ITModeCfg+0x62>
+ caa:	0000                	unimp
+ cac:	fee6                	fsw	fs9,124(sp)
+ cae:	ffff                	0xffff
+ cb0:	ff0e                	fsw	ft3,188(sp)
+ cb2:	ffff                	0xffff
+ cb4:	ff36                	fsw	fa3,188(sp)
+ cb6:	ffff                	0xffff
+ cb8:	ff4e                	fsw	fs3,188(sp)
+ cba:	ffff                	0xffff
+ cbc:	ff68                	fsw	fa0,124(a4)
+ cbe:	ffff                	0xffff
