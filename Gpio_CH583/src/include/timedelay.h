@@ -12,7 +12,7 @@
 bool TimeDelay (uint32_t delay);
 void sysytem_initSystick(void);
 
-void SysTick_Handler(void) __attribute__ ((interrupt("WCH-Interrupt-fast"))); // A����ڧҧ�� �էݧ� �ӧ��٧�ӧ� ��ҧ�ѧҧ���ڧܧ� ���֧���ӧѧߧڧ�
+void SysTick_Handler(void) __attribute__ ((interrupt("WCH-Interrupt-fast"))); // Aттрибут для вызова обработчика прерывания
 
 
 
