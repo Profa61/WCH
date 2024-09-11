@@ -12,18 +12,19 @@
 
 volatile uint32_t timestamp;
 
-// ßØß—ß„ß‰ß‚ß‡ß€ß‹ß— SysTick
+// ÔøΩÔøΩÔøΩ—ßÔøΩÔøΩÔøΩÔøΩ€ß‹ßÔøΩ SysTick
 void sysytem_initSystick(void)
 {
-  PFIC_EnableIRQ(SysTick_IRQn);  // ß£ß‹ß›ßßÈß—ß ß·ß‚ß÷ß‚ßÌß”ß—ßﬂß⁄ß÷ ß‡ß‰ ß≥ß⁄ß„ß‰ß÷ßﬁßﬂß‡ß‘ß‡ ß‰ß—ß€ßﬁß÷ß‚ß—
+  PFIC_EnableIRQ(SysTick_IRQn);  // –í–∫–ª—é—á–∞–µ–º –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–µ SysTick
   SysTick_Config(FREQ_SYS / FREQUENCY_DIVIDER);
 }
 
 
 
 
-/*ß±ß÷ß‚ß÷ß’ß—ß÷ß‰ß„ßÒ ß”ß‚ß÷ßﬁßÒ ßŸß—ß’ß÷ß‚ßÿß‹ß⁄ ß” ßﬁß⁄ß›ß›ß⁄ß„ß÷ß‹ßÂßﬂß’ß—ßÁ
- ßØß— ß”ßÌßÁß‡ß’ß÷ bool*/
+/*–ñ–¥–µ—Ç –Ω–∞ –≤—Ö–æ–¥–µ –∑–∞–¥–µ—Ä–∂–∫—É –≤ –ú–°
+ *–ù–∞ –≤—ã—Ö–æ–¥–µ —Ä–µ–∑—É–ª—å—Ç–∞—Ç bool
+ */
 
 bool TimeDelay (uint32_t delay){
    static uint32_t time_delay;
@@ -40,5 +41,5 @@ bool TimeDelay (uint32_t delay){
 void SysTick_Handler(void)
 {
     timestamp++;
-  SysTick->SR = 0;   // ß∞ßÈß⁄ßÎß—ß ß—ß·ß·ß—ß‚ß—ß‰ßﬂßÌß€ ßÊß›ß—ß‘
+  SysTick->SR = 0;   // –û—á–∏—â–∞–µ–º —Ñ–ª–∞–≥ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏—è
 }
