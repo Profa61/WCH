@@ -35,14 +35,8 @@ void ble_mode_init()
 
     case BLE_BEGIN:
         PRINT("BLE_BEGIN\n");
-        if (ble_state)
-        {
-            ble_mod = SERVICE;
-        }
-        else
-        {
-            ble_mod = BEACON;
-        }
+        ble_mod = ble_state ? SERVICE : BEACON;
+
         advertising_enable = FALSE;
         GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &advertising_enable);
         return;
@@ -50,7 +44,7 @@ void ble_mode_init()
 
     case BEACON:
         PRINT("BEACON\n");
-       initial_adv_event_type = GAP_ADTYPE_ADV_NONCONN_IND;
+        initial_adv_event_type = GAP_ADTYPE_ADV_NONCONN_IND;
         ble_mod = BLE_END;
         ble_state = true;
         return;
