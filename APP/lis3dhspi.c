@@ -14,8 +14,8 @@ void SpiIinit()
  uint8_t lis_init[] =
  {       0x88,       // CTRL_REG5
          0x57,       // LIS3DH_CTRL_REG1
-         0x20,       // INT1_THS
-         0x01,       // INT1_DURATION
+         0x10,       // INT1_THS
+         0x10,       // INT1_DURATION
          0x20,       // INT1_CFG
          0x20,       // INT1_SOURCE
          0x40,       // CTRL_REG3

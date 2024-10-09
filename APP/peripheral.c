@@ -106,9 +106,9 @@ blePaControlConfig_t pa_lna_ctl;
 // GAP - SCAN RSP data (max size = 31 bytes)
 static uint8 scanRspData[] = {
     // complete name
-    15, // length of this data
+    10, // length of this data
     GAP_ADTYPE_LOCAL_NAME_COMPLETE,
-    'c', 'h', '5', '8', '3', '_', 'b', 'l', 'e', '_', 'u', 'a', 'r', 't',
+    'c', 'h', '5', '8', '3', '_', 'b', 'l', 'e',
     // connection interval range
     0x05, // length of this data
     GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE,
@@ -198,33 +198,6 @@ static gapBondCBs_t Peripheral_BondMgrCBs = {
  * @return  none
  */
 
-//void gpio_blink(){
-//    static uint32_t time;
-//    static bool flag;
-//
-//    time++;
-//    if ((time / 1000 >= 10)&& (flag == false)){
-//    time = 0;
-//    flag = true;
-//    PRINT("flag true\n");
-//
-////    GPIOB_ModeCfg(GPIO_Pin_0 , GPIO_ModeIN_Floating);
-////    GPIOB_ModeCfg(GPIO_Pin_1 , GPIO_ModeOut_PP_20mA);
-//    GPIOB_ModeCfg(GPIO_Pin_0, GPIO_ITMode_HighLevel);
-//    GPIOB_ModeCfg(GPIO_Pin_1, GPIO_ITMode_LowLevel);
-//
-//
-//    }
-//    if((time / 1000 >= 10) && (flag == true)){
-//        time = 0;
-////        GPIOB_ModeCfg(GPIO_Pin_1 , GPIO_ModeIN_Floating);
-////         GPIOB_ModeCfg(GPIO_Pin_0 , GPIO_ModeOut_PP_20mA);
-//        GPIOB_ModeCfg(GPIO_Pin_1, GPIO_ITMode_HighLevel);
-//        GPIOB_ModeCfg(GPIO_Pin_0, GPIO_ITMode_LowLevel);
-//        flag = false;
-//        PRINT("flag false\n");
-//    }
-//}
 
 
 void delay(uint32_t count) {
@@ -274,10 +247,13 @@ void Peripheral_Init()
     }
 
     // Initialize GATT attributes
-    GGS_AddService(GATT_ALL_SERVICES);         // GAP
-    GATTServApp_AddService(GATT_ALL_SERVICES); // GATT attributes
-    DevInfo_AddService();                      // Device Information Service
+    //GGS_AddService(GATT_ALL_SERVICES);         // GAP
+    //GATTServApp_AddService(GATT_ALL_SERVICES); // GATT attributes
+    //DevInfo_AddService();                      // Device Information Service
     ble_uart_add_service(on_bleuartServiceEvt);
+
+
+
 
     // Set the GAP Characteristics
     GGS_SetParameter(GGS_DEVICE_NAME_ATT, sizeof(attDeviceName), attDeviceName);

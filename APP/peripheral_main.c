@@ -3,7 +3,7 @@
  * Author             : WCH
  * Version            : V1.1
  * Date               : 2020/08/06
- * Description        : ÍâÉè´Ó»úÓ¦ÓÃÖ÷º¯Êý¼°ÈÎÎñÏµÍ³³õÊ¼»¯
+ * Description        : ï¿½ï¿½ï¿½ï¿½Ó»ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½Ê¼ï¿½ï¿½
  *********************************************************************************
  * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
  * Attention: This software (modified or not) and binary are used for 
@@ -11,7 +11,7 @@
  *******************************************************************************/
 
 /******************************************************************************/
-/* Í·ÎÄ¼þ°üº¬ */
+/* Í·ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #include "CONFIG.h"
 #include "HAL.h"
 #include "gattprofile.h"
@@ -21,15 +21,8 @@
 #include "CH58x_common.h"
 #include "timedelay.h"
 #include "lis3dhspi.h"
-
-
-
-//__attribute__((aligned(4))) UINT8 spiBuff[] = {0x32, 0x01, 0x33, 0x01, 0x30, 0x55 };
-
-
-
-
-
+#include "ble_mod.h"
+#include "broadcaster.h"
 
 
 /*********************************************************************
@@ -43,7 +36,7 @@ u8C MacAddr[6] = {0x84, 0xC2, 0xE4, 0x03, 0x02, 0x02};
 
 /*******************************************************************************
  * Function Name  : Main_Circulation
- * Description    : Ö÷Ñ­»·
+ * Description    : ï¿½ï¿½Ñ­ï¿½ï¿½
  * Input          : None
  * Output         : None
  * Return         : None
@@ -60,13 +53,18 @@ void Main_Circulation()
         TMOS_SystemProcess();
         app_uart_process();
         gpio_blink();
+        ble_mode_init();
+
+
+
+
 
     }
 }
 
 /*******************************************************************************
  * Function Name  : main
- * Description    : Ö÷º¯Êý
+ * Description    : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * Input          : None
  * Output         : None
  * Return         : None
@@ -76,12 +74,13 @@ int main(void)
     SetSysClock(CLK_SOURCE_PLL_60MHz);
 
     GPIOA_ModeCfg(LIS_INT1, GPIO_ModeIN_PU);
-    GPIOA_ITModeCfg(LIS_INT1, GPIO_ITMode_LowLevel);
+    GPIOA_ITModeCfg(LIS_INT1, GPIO_ITMode_FallEdge);  //GPIO_ITMode_LowLevel
     PFIC_EnableIRQ(GPIO_A_IRQn);
+    PWR_PeriphWakeUpCfg(ENABLE, RB_SLP_GPIO_WAKE, Long_Delay);
 
 
     GPIOB_ModeCfg(BUTTON, GPIO_ModeIN_PU);
-    GPIOB_ITModeCfg(BUTTON, GPIO_ITMode_LowLevel);
+    GPIOB_ITModeCfg(BUTTON, GPIO_ITMode_FallEdge);
     PFIC_EnableIRQ(GPIO_B_IRQn);
 
     GPIOB_ResetBits(LED1);
@@ -89,6 +88,7 @@ int main(void)
 
     GPIOB_ResetBits(LED2);
     GPIOB_ModeCfg(LED2, GPIO_ModeOut_PP_5mA);
+
 
 
 
@@ -102,6 +102,8 @@ int main(void)
   // PRINT("%s\n", VER_LIB);
    CH58X_BLEInit();
    HAL_Init();
+
+   //Broadcaster_Init();
    GAPRole_PeripheralInit();
    Peripheral_Init();
    app_uart_init();
